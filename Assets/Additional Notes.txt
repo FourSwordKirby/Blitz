@@ -1,0 +1,1 @@
+Ensure that sprite sheets are powers of 2

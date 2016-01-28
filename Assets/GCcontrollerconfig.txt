@@ -1,0 +1,15 @@
+GC button config
+x = 0
+a = 1
+b = 2
+y = 3
+L = 4
+R = 5
+? = 9
+Z = 7
+? = 8
+START = 9
+DPAD UP = 12
+DPAD RIGHT = 13
+DPAD DOWN = 14
+DPAD LEFT = 15
