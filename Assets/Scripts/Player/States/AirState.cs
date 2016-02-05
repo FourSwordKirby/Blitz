@@ -40,8 +40,8 @@ public class AirState : State<Player>
         }
 
         //Temporary measures until we get more animations.
-        if (movementInputVector.x != 0)
-            player.anim.SetFloat("DirX", movementInputVector.x / Mathf.Abs(movementInputVector.x));
+        //if (movementInputVector.x != 0)
+        //    player.anim.SetFloat("DirX", movementInputVector.x / Mathf.Abs(movementInputVector.x));
         //player.anim.SetFloat("DirY", Mathf.Ceil(Parameters.getVector(player.direction).y));
     }
 

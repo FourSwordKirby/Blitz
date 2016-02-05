@@ -10,23 +10,47 @@ public class Controls {
 
         if (GameManager.Players.IndexOf(player) == 0)
         {
-            xAxis = Input.GetAxis("P1 Horizontal");
-            yAxis = Input.GetAxis("P1 Vertical");
+            if (Mathf.Abs(Input.GetAxis("P1 Horizontal")) > Mathf.Abs(Input.GetAxis("P1 Keyboard Horizontal")))
+                xAxis = Input.GetAxis("P1 Horizontal");
+            else
+                xAxis = Input.GetAxis("P1 Keyboard Horizontal");
+            if (Mathf.Abs(Input.GetAxis("P1 Vertical")) > Mathf.Abs(Input.GetAxis("P1 Keyboard Vertical")))
+                yAxis = Input.GetAxis("P1 Vertical");
+            else
+                yAxis = Input.GetAxis("P1 Keyboard Vertical");
         }
         else if (GameManager.Players.IndexOf(player) == 1)
         {
-            xAxis = Input.GetAxis("P2 Horizontal");
-            yAxis = Input.GetAxis("P2 Vertical");
+            if (Mathf.Abs(Input.GetAxis("P2 Horizontal")) > Mathf.Abs(Input.GetAxis("P2 Keyboard Horizontal")))
+                xAxis = Input.GetAxis("P2 Horizontal");
+            else
+                xAxis = Input.GetAxis("P2 Keyboard Horizontal");
+            if (Mathf.Abs(Input.GetAxis("P2 Vertical")) > Mathf.Abs(Input.GetAxis("P2 Keyboard Vertical")))
+                yAxis = Input.GetAxis("P2 Vertical");
+            else
+                yAxis = Input.GetAxis("P2 Keyboard Vertical");
         }
         else if (GameManager.Players.IndexOf(player) == 2)
         {
-            xAxis = Input.GetAxis("P3 Horizontal");
-            yAxis = Input.GetAxis("P3 Vertical");
+            if (Mathf.Abs(Input.GetAxis("P3 Horizontal")) > Mathf.Abs(Input.GetAxis("P3 Keyboard Horizontal")))
+                xAxis = Input.GetAxis("P3 Horizontal");
+            else
+                xAxis = Input.GetAxis("P3 Keyboard Horizontal");
+            if (Mathf.Abs(Input.GetAxis("P3 Vertical")) > Mathf.Abs(Input.GetAxis("P3 Keyboard Vertical")))
+                yAxis = Input.GetAxis("P3 Vertical");
+            else
+                yAxis = Input.GetAxis("P3 Keyboard Vertical");
         }
         else if (GameManager.Players.IndexOf(player) == 3)
         {
-            xAxis = Input.GetAxis("P4 Horizontal");
-            yAxis = Input.GetAxis("P4 Vertical");
+            if (Mathf.Abs(Input.GetAxis("P4 Horizontal")) > Mathf.Abs(Input.GetAxis("P4 Keyboard Horizontal")))
+                xAxis = Input.GetAxis("P4 Horizontal");
+            else
+                xAxis = Input.GetAxis("P4 Keyboard Horizontal");
+            if (Mathf.Abs(Input.GetAxis("P4 Vertical")) > Mathf.Abs(Input.GetAxis("P4 Keyboard Vertical")))
+                yAxis = Input.GetAxis("P4 Vertical");
+            else
+                yAxis = Input.GetAxis("P4 Keyboard Vertical");
         }
         return new Vector2(xAxis, yAxis);
     }

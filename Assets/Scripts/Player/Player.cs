@@ -36,7 +36,7 @@ public class Player : Mobile {
     
     public const int DEFAULT_MAX_HEALTH = 100;
     public const int DEFAULT_MAX_METER = 100;
-    public const int DEFAULT_STOCK_COUNT = 2;
+    public const int DEFAULT_STOCK_COUNT = 4;
 
     public const float DEFAULT_SPEED = 2.0f;
     public const float DEFAULT_ROLL_SPEED = 6.0f;
@@ -103,8 +103,6 @@ public class Player : Mobile {
 	
 	// Update is called once per frame
 	void Update () {
-        //Controller support works sort of yaaaaay
-        //Debug.Log(GamepadInput.GamePad.GetAxis(GamepadInput.GamePad.Axis.LeftStick, GamepadInput.GamePad.Index.One).x);
         this.ActionFsm.Execute();
 
         //Testing of the other buttons
@@ -113,7 +111,8 @@ public class Player : Mobile {
             GameObject newFireball = Instantiate(prefabs[0]);
             newFireball.GetComponentInChildren<FireballHitbox>().owner = this;
             newFireball.transform.position = this.transform.position + new Vector3(0, 1, 0);
-            newFireball.GetComponent<Rigidbody2D>().velocity = new Vector3(4, 0, 0);
+            float xDir = Parameters.getVector(direction).x;
+            newFireball.GetComponent<Rigidbody2D>().velocity = new Vector3(xDir * 4, 0, 0);
         }
         if (Controls.specialInputDown(this))
         {

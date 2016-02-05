@@ -5,6 +5,8 @@ public class Parameters : MonoBehaviour {
 
     public enum InputDirection
     {
+        Left,
+        Right,
         North,
         NorthEast,
         East,
@@ -40,6 +42,12 @@ public class Parameters : MonoBehaviour {
 
     public static InputDirection vectorToDirection(Vector2 inputVector)
     {
+        if (inputVector.x > 0)
+            return InputDirection.Right;
+        else
+            return InputDirection.Left;
+
+        /*
         if (inputVector == Vector2.zero)
             return Parameters.InputDirection.Stop; ;
 
@@ -78,7 +86,8 @@ public class Parameters : MonoBehaviour {
             return Parameters.InputDirection.SouthEast;
         }
 
-        return Parameters.InputDirection.Stop;
+        return Parameters.InputDirection.Stop
+            */
     }
 
     public static bool isOppositeDirection(InputDirection dir_1, InputDirection dir_2)
@@ -133,6 +142,10 @@ public class Parameters : MonoBehaviour {
     {
         switch (dir)
         {
+            case Parameters.InputDirection.Left:
+                return new Vector2(-1, 0);
+            case Parameters.InputDirection.Right:
+                return new Vector2(1, 0);
             case Parameters.InputDirection.North:
                 return new Vector2(0, 1);
             case Parameters.InputDirection.NorthEast:
