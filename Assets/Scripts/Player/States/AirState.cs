@@ -19,6 +19,8 @@ public class AirState : State<Player>
         return;
     }
 
+
+    /*error with collision boxes puts player in air state when he actually isn't*/
     override public void Execute()
     {
         movementInputVector = Controls.getDirection(player);

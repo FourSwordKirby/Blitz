@@ -32,8 +32,10 @@ public class RollStartupState : State<Player> {
             player.ActionFsm.ChangeState(new RollState(player, player.ActionFsm));
 
         Parameters.InputDirection potential_direction = Controls.getInputDirection(player);
+        /*
         if(potential_direction != Parameters.InputDirection.Stop)
             player.direction = Controls.getInputDirection(player);
+         */
     }
 
     override public void FixedExecute()
@@ -44,6 +46,7 @@ public class RollStartupState : State<Player> {
         {
             switch (player.direction)
             {
+                    /*
                 case Parameters.InputDirection.North:
                     player.GetComponent<Rigidbody2D>().velocity += new Vector2(0, 1) * player.movementSpeed * 0.2f;
                     break;                                      
@@ -67,7 +70,8 @@ public class RollStartupState : State<Player> {
                     break;                                      
                 case Parameters.InputDirection.NorthWest:
                     player.GetComponent<Rigidbody2D>().velocity += new Vector2(Mathf.Sin(3 * Mathf.PI / 2), Mathf.Sin(Mathf.PI / 2)) * player.movementSpeed * 0.2f;
-                    break;                                      
+                    break;                         
+                     */
             }
         }
     }

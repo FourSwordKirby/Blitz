@@ -6,16 +6,7 @@ public class Parameters : MonoBehaviour {
     public enum InputDirection
     {
         Left,
-        Right,
-        North,
-        NorthEast,
-        East,
-        SouthEast,
-        South,
-        SouthWest,
-        West,
-        NorthWest,
-        Stop
+        Right
     };
 
     //Do we need this?
@@ -94,23 +85,11 @@ public class Parameters : MonoBehaviour {
     {
         switch (dir_1)
         {
-            case InputDirection.North: 
-                return (dir_2 == InputDirection.SouthEast || dir_2 == InputDirection.South || dir_2 == InputDirection.SouthWest);
-            case InputDirection.NorthEast: 
-                return (dir_2 == InputDirection.West || dir_2 == InputDirection.South || dir_2 == InputDirection.SouthWest);
-            case InputDirection.East: 
-                return (dir_2 == InputDirection.NorthWest || dir_2 == InputDirection.West || dir_2 == InputDirection.SouthWest);
-            case InputDirection.SouthEast: 
-                return (dir_2 == InputDirection.NorthWest || dir_2 == InputDirection.West || dir_2 == InputDirection.North);
-            case InputDirection.South: 
-                return (dir_2 == InputDirection.NorthEast || dir_2 == InputDirection.North || dir_2 == InputDirection.NorthWest);
-            case InputDirection.SouthWest: 
-                return (dir_2 == InputDirection.East || dir_2 == InputDirection.North || dir_2 == InputDirection.NorthEast);
-            case InputDirection.West: 
-                return (dir_2 == InputDirection.SouthEast || dir_2 == InputDirection.East || dir_2 == InputDirection.NorthEast);
-            case InputDirection.NorthWest: 
-                return (dir_2 == InputDirection.SouthEast || dir_2 == InputDirection.South || dir_2 == InputDirection.East);
-        }
+            case InputDirection.Left: 
+                return dir_2 == InputDirection.Right;
+            case InputDirection.Right:
+                return dir_2 == InputDirection.Left;
+            }
         return false;
     }
 
@@ -118,24 +97,12 @@ public class Parameters : MonoBehaviour {
     {
         switch (dir)
         {
-            case InputDirection.North:
-                return InputDirection.South;
-            case InputDirection.NorthEast:
-                return InputDirection.SouthWest;
-            case InputDirection.East:
-                return InputDirection.West;
-            case InputDirection.SouthEast:
-                return InputDirection.NorthWest;
-            case InputDirection.South:
-                return InputDirection.North;
-            case InputDirection.SouthWest:
-                return InputDirection.NorthEast;
-            case InputDirection.West:
-                return InputDirection.East;
-            case InputDirection.NorthWest:
-                return InputDirection.SouthEast;
+            case InputDirection.Left:
+                return InputDirection.Right;
+            case InputDirection.Right:
+                return InputDirection.Left;
         }
-        return InputDirection.Stop;
+        return InputDirection.Left;
     }
 
     public static Vector2 getVector(InputDirection dir)
@@ -146,22 +113,6 @@ public class Parameters : MonoBehaviour {
                 return new Vector2(-1, 0);
             case Parameters.InputDirection.Right:
                 return new Vector2(1, 0);
-            case Parameters.InputDirection.North:
-                return new Vector2(0, 1);
-            case Parameters.InputDirection.NorthEast:
-                return new Vector2(Mathf.Sin(Mathf.PI / 2), Mathf.Sin(Mathf.PI / 2));
-            case Parameters.InputDirection.East:
-                return new Vector2(1, 0);
-            case Parameters.InputDirection.SouthEast:
-                return new Vector2(Mathf.Sin(Mathf.PI / 2), Mathf.Sin(3 * Mathf.PI / 2));
-            case Parameters.InputDirection.South:
-                return new Vector2(0, -1);
-            case Parameters.InputDirection.SouthWest:
-                return new Vector2(Mathf.Sin(3 * Mathf.PI / 2), Mathf.Sin(3 * Mathf.PI / 2));
-            case Parameters.InputDirection.West:
-                return new Vector2(-1, 0);
-            case Parameters.InputDirection.NorthWest:
-                return new Vector2(Mathf.Sin(3 * Mathf.PI / 2), Mathf.Sin(Mathf.PI / 2));
         }
         return Vector2.zero;
     }
@@ -171,43 +122,11 @@ public class Parameters : MonoBehaviour {
         Vector2 playerPos = player.transform.position; 
         Vector2 targetPos = target.transform.position;
 
-        Vector2 dir = targetPos - playerPos;
-
-        float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
-
-        if (angle >= -22.5 && angle < 22.5)
+        if (player.transform.position.x - target.transform.position.x > 0)
         {
-            return Parameters.InputDirection.East;
+            return InputDirection.Right;
         }
-        else if (angle >= 22.5 && angle < 67.5)
-        {
-            return Parameters.InputDirection.NorthEast;
-        }
-        else if (angle >= 67.5 && angle < 112.5)
-        {
-            return Parameters.InputDirection.North;
-        }
-        else if (angle >= 112.5 && angle < 157.5)
-        {
-            return Parameters.InputDirection.NorthWest;
-        }
-        else if (angle >= 157.5 || angle < -157.5)
-        {
-            return Parameters.InputDirection.West;
-        }
-        else if (angle >= -157.5 && angle < -112.5)
-        {
-            return Parameters.InputDirection.SouthWest;
-        }
-        else if (angle >= -112.5 && angle < -67.5)
-        {
-            return Parameters.InputDirection.South;
-        }
-        else if (angle >= -67.5 && angle < -22.5)
-        {
-            return Parameters.InputDirection.SouthEast;
-        }
-
-        return Parameters.InputDirection.Stop;
+        else
+            return InputDirection.Left;
     }
 }

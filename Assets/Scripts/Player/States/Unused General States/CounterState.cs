@@ -21,8 +21,6 @@ public class CounterState : State<Player>
         duration = 0;
         player = playerInstance;
         baseKnockbackThreshold = player.knockdownThreshold;
-
-        counterDirection = Parameters.InputDirection.Stop; //a default value
     }
 
     override public void Enter()
@@ -42,6 +40,7 @@ public class CounterState : State<Player>
 
     override public void Execute()
     {
+        /*
         counterAttack = Controls.attackInputHeld(player);
 
         if (duration < counter_invincibility_duration && counterDirection == Parameters.InputDirection.Stop)
@@ -56,6 +55,7 @@ public class CounterState : State<Player>
                 player.anim.SetFloat("DirY", Mathf.Ceil(Parameters.getVector(player.direction).y));
             }
         }
+         */
 
         //I really want to use delegates so that on hit's functionality is replaced by my counter state stuff temporarily
         duration += Time.deltaTime;
