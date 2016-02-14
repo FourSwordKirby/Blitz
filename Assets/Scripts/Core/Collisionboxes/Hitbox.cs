@@ -7,11 +7,11 @@ public abstract class Hitbox : Collisionbox{
 
     public float damage;
     public Vector2 knockbackVector;
+    public float hitlag;
     public float hitstun;
 
     public float blockstun;
     public bool isProjectile;
-    public float hitlag;
 
     public float shieldDamage;
     public int prioirty;

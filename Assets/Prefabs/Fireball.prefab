@@ -119,11 +119,11 @@ MonoBehaviour:
   name: 
   owner: {fileID: 0}
   damage: 10
-  knockbackVector: {x: 4, y: 4}
-  hitstun: 10
+  knockbackVector: {x: 0, y: 4}
+  hitlag: 0.1
+  hitstun: 1
   blockstun: 10
   isProjectile: 1
-  hitlag: 0
   shieldDamage: 0
   prioirty: 0
   meterGain: 2
@@ -168,7 +168,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 0}
       propertyPath: knockbackVector.x
-      value: 4
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: knockbackVector.y
@@ -181,6 +181,14 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: decayTime
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: hitlag
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: hitstun
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

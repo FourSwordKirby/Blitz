@@ -9,8 +9,20 @@ public abstract class Hurtbox : Collisionbox {
     public Player owner;
     public Parameters.HurtboxStatus status;
 
+
+    /// <summary>
+    /// Deals damage to the target object
+    /// </summary>
     public abstract void TakeDamage(float damage);
-    public abstract void TakeHitstun(float hitstun);
-    public abstract void TakeKnockback(Vector2 knockback);
+
+    /// <summary>
+    /// This function will apply these main features to the hurtbox that is getting hit
+    /// In the case that thereis no hitstun or hitlag, it is advised to not go into a hitstun state
+    /// </summary>
+    public abstract void TakeHit(float hitlag, float hitstun, Vector2 knockback);
+
+    /// <summary>
+    /// This function is currently a placeholder in case we actually want to implement custom visual/gameplay effects
+    /// </summary>
     public abstract void ApplyEffect(Parameters.Effect effect);
 }
