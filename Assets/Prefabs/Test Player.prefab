@@ -214,7 +214,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 169450}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.78, y: 0.55, z: -10}
+  m_LocalPosition: {x: 2.26, y: 0.86, z: -10}
   m_LocalScale: {x: 0.33043396, y: 0.33043396, z: 0.33043396}
   m_Children:
   - {fileID: 455744}
@@ -340,7 +340,7 @@ MonoBehaviour:
   owner: {fileID: 11431266}
   floorMask:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 3840
 --- !u!114 &11431266
 MonoBehaviour:
   m_ObjectHideFlags: 1
