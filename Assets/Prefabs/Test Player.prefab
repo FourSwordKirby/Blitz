@@ -58,7 +58,7 @@ GameObject:
   - 61: {fileID: 6193956}
   - 114: {fileID: 11415556}
   m_Layer: 0
-  m_Name: LandingBox
+  m_Name: GroundedChecker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -333,7 +333,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 160414}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bb7c6d268961fea4ab47aab79e4046ee, type: 3}
+  m_Script: {fileID: 11500000, guid: b1623f180dd76f247ba605a86ba7228a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   name: Landingbox
