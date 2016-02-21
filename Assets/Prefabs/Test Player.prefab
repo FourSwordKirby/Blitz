@@ -110,6 +110,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 488198}
   - 61: {fileID: 6182826}
+  - 114: {fileID: 11472642}
   m_Layer: 0
   m_Name: TestECB
   m_TagString: Untagged
@@ -214,7 +215,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 169450}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.26, y: 0.86, z: -10}
+  m_LocalPosition: {x: -1.72, y: 0.86, z: -10}
   m_LocalScale: {x: 0.33043396, y: 0.33043396, z: 0.33043396}
   m_Children:
   - {fileID: 455744}
@@ -336,7 +337,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1623f180dd76f247ba605a86ba7228a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: Landingbox
   owner: {fileID: 11431266}
   floorMask:
     serializedVersion: 2
@@ -366,6 +366,7 @@ MonoBehaviour:
   maxAirDashes: 1
   airJumps: 0
   airDashes: 0
+  environmentCollisionBox: {fileID: 11472642}
   prefabs:
   - {fileID: 142996, guid: 79906aa9daebb4d4da698be60a875aa1, type: 2}
 --- !u!114 &11470188
@@ -380,6 +381,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 11431266}
+--- !u!114 &11472642
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 178600}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe93425d1e8c61d47aacf6ccec433cd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  name: TestECB
 --- !u!114 &11483892
 MonoBehaviour:
   m_ObjectHideFlags: 1

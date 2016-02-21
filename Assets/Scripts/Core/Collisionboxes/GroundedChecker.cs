@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class GroundedChecker : Collisionbox {
+public class GroundedChecker : MonoBehaviour {
     public Player owner;
 
     public LayerMask floorMask;
@@ -13,13 +13,10 @@ public class GroundedChecker : Collisionbox {
 
         if (Physics2D.Raycast(this.transform.position, Vector3.down, 0.3f, floorMask))
         {
-            Debug.Log("Grounded");
             owner.grounded = true;
         }
         else
         {
-
-            Debug.Log("NOT");
             owner.grounded = false;
         }
     }
