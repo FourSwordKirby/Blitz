@@ -113,22 +113,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 149368}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 08491a4410e302e498f7663774327d80, type: 3}
+  m_Script: {fileID: 11500000, guid: ba24d40d763d34d4283a1218bd7563c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: 
+  name: Fireball
   owner: {fileID: 0}
-  damage: 10
-  knockbackVector: {x: 0, y: 4}
+  damage: 4
+  knockbackVector: {x: 0, y: 0}
   hitlag: 0.1
-  hitstun: 1
-  blockstun: 10
-  isProjectile: 1
+  hitstun: 0.3
+  blockstun: 0
+  isProjectile: 0
   shieldDamage: 0
   prioirty: 0
   meterGain: 2
   effect: 0
-  decayTime: 2
+  decayTime: 5
 --- !u!212 &21221754
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -180,7 +180,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: decayTime
-      value: 2
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: hitlag
@@ -188,7 +188,19 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: hitstun
-      value: 1
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: damage
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: name
+      value: Fireball
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: meterGain
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

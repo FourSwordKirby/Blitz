@@ -30,6 +30,23 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &149680
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 483514}
+  - 61: {fileID: 6187690}
+  - 114: {fileID: 11495196}
+  m_Layer: 0
+  m_Name: StompHitbox
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &157500
 GameObject:
   m_ObjectHideFlags: 0
@@ -168,7 +185,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 483514}
   m_Father: {fileID: 484188}
   m_RootOrder: 1
 --- !u!4 &455744
@@ -208,6 +226,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 484188}
   m_RootOrder: 3
+--- !u!4 &483514
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 149680}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 454032}
+  m_RootOrder: 0
 --- !u!4 &484188
 Transform:
   m_ObjectHideFlags: 1
@@ -215,7 +245,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 169450}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.72, y: 0.86, z: -10}
+  m_LocalPosition: {x: 2.09, y: 1.02, z: -10}
   m_LocalScale: {x: 0.33043396, y: 0.33043396, z: 0.33043396}
   m_Children:
   - {fileID: 455744}
@@ -295,6 +325,20 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
+--- !u!61 &6187690
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 149680}
+  m_Enabled: 0
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
 --- !u!61 &6193956
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -340,7 +384,7 @@ MonoBehaviour:
   owner: {fileID: 11431266}
   floorMask:
     serializedVersion: 2
-    m_Bits: 3840
+    m_Bits: 256
 --- !u!114 &11431266
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -361,7 +405,7 @@ MonoBehaviour:
   fallSpeed: 0
   airMovementSpeed: 5
   knockdownThreshold: 0
-  grounded: 0
+  grounded: 1
   maxAirJumps: 1
   maxAirDashes: 1
   airJumps: 0
@@ -392,7 +436,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe93425d1e8c61d47aacf6ccec433cd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: TestECB
+  name: ECB
 --- !u!114 &11483892
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -404,7 +448,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7bc55df43398bc247b7e64fb63b8490f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: 
+  name: TestHurtbox
   owner: {fileID: 11431266}
   status: 0
 --- !u!114 &11488440
@@ -418,7 +462,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2276a94b377940e4eba8e920428bbcef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CollisionBoxes: []
+  CollisionBoxes:
+  - {fileID: 11495196}
+--- !u!114 &11495196
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 149680}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0bddff6a382a40458c7c3ba078b4c96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  name: StompHitbox
+  owner: {fileID: 11431266}
+  damage: 30
+  knockbackVector: {x: 0, y: -20}
+  hitlag: 0.4
+  hitstun: 0.4
+  blockstun: 0
+  isProjectile: 0
+  shieldDamage: 0
+  prioirty: 0
+  meterGain: 0
+  effect: 0
 --- !u!212 &21226642
 SpriteRenderer:
   m_ObjectHideFlags: 1

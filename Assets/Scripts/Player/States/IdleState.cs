@@ -18,7 +18,6 @@ public class IdleState : State<Player> {
     override public void Execute()
     {
         Vector2 movementInputVector = Controls.getDirection(player);
-
         //Might want to change this stuff later to include transition states
         //Moving
         if (movementInputVector.x != 0)
@@ -45,13 +44,10 @@ public class IdleState : State<Player> {
             return;
         }
 
-        /*
-        if (Controls.enhanceInputHeld())
-            player.ActionFsm.ChangeState(new ParryState(player, player.ActionFsm));
-
-        if (Controls.attackInputDown())
-            player.ActionFsm.ChangeState(new AttackState(player, player.ActionFsm));
-         */
+        if (Controls.superInputDown(player))
+        {
+            player.ActionFsm.ChangeState(new DownSuperState(player, player.ActionFsm));
+        }
     }
 
     override public void FixedExecute(){    }

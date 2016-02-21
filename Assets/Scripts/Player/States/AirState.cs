@@ -41,6 +41,12 @@ public class AirState : State<Player>
             return;
         }
 
+        //Doing air supers
+        if (Controls.superInputDown(player))
+        {
+            player.ActionFsm.ChangeState(new DownSuperState(player, player.ActionFsm));
+        }
+
         //Temporary measures until we get more animations.
         //if (movementInputVector.x != 0)
         //    player.anim.SetFloat("DirX", movementInputVector.x / Mathf.Abs(movementInputVector.x));

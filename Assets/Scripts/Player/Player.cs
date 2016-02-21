@@ -115,10 +115,6 @@ public class Player : Mobile {
             float xDir = Parameters.getVector(direction).x;
             newFireball.GetComponent<Rigidbody2D>().velocity = new Vector3(xDir * 4, 0, 0);
         }
-        if (Controls.specialInputDown(this))
-        {
-        }
-
 
         if (health <= 0)
         {
