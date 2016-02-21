@@ -13,6 +13,7 @@ public class DownSuperState : State<Player>
 
     public DownSuperState(Player playerInstance, StateMachine<Player> fsm) : base(playerInstance, fsm)
     {
+        Time.timeScale = 0.7f;
         timer = 0;
         player = playerInstance;
     }
@@ -46,6 +47,7 @@ public class DownSuperState : State<Player>
 
     override public void Exit()
     {
+        Time.timeScale = 1.0f;
         player.hitboxManager.deactivateHitBox("StompHitbox");
     }
 }
