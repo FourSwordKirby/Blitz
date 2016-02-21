@@ -2,6 +2,7 @@
 using System.Collections;
 using UnityEngine.UI;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 
 public class MenuUI : MonoBehaviour {
 
@@ -13,9 +14,8 @@ public class MenuUI : MonoBehaviour {
 	void Update () {
 
 	}
-
-	public void testClick(){
-		Debug.Log ("click");
+		
+	public void optionClick(){
+		Debug.Log ("to be finished");
 	}
-
 }
