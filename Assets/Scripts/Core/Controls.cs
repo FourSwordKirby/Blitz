@@ -3,6 +3,12 @@ using System.Collections;
 
 public class Controls {
 
+    /*These constants refer to specific thresholds for reading in inputs
+     * For example, the constant FALL_THROUGH_THRESHOLD denotes the threshold 
+     * between crouching on a platform and falling through the platform
+     */
+    public const float FALL_THROUGH_THRESHOLD = 0.5f;
+
     public static Vector2 getDirection(Player player)
     {
         float xAxis = 0;

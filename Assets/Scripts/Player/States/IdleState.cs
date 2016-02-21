@@ -36,6 +36,15 @@ public class IdleState : State<Player> {
             return;
         }
 
+        //falling through platform
+        if (Controls.getDirection(player).y < -Controls.FALL_THROUGH_THRESHOLD)
+        {
+            player.grounded = false;
+            player.environmentCollisionBox.fallThrough();
+            player.ActionFsm.ChangeState(new AirState(player, player.ActionFsm));
+            return;
+        }
+
         /*
         if (Controls.enhanceInputHeld())
             player.ActionFsm.ChangeState(new ParryState(player, player.ActionFsm));

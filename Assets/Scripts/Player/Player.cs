@@ -57,6 +57,7 @@ public class Player : Mobile {
     public Animator anim { get; private set; }
     public Rigidbody2D selfBody { get; private set; }
     public CollisionboxManager hitboxManager { get; private set; }
+    public ECB environmentCollisionBox;
     public List<GameObject> prefabs;
     /*private GameObject bodyVisual;
     public PlayerSounds Sounds { get; private set; }
