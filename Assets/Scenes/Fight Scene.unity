@@ -651,6 +651,56 @@ Transform:
   m_Children: []
   m_Father: {fileID: 758395924}
   m_RootOrder: 0
+--- !u!1001 &667778081
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1846765622}
+    m_Modifications:
+    - target: {fileID: 475934, guid: 2664b8722d7595349abd4f64264a9ec4, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -201.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 475934, guid: 2664b8722d7595349abd4f64264a9ec4, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -131.93
+      objectReference: {fileID: 0}
+    - target: {fileID: 475934, guid: 2664b8722d7595349abd4f64264a9ec4, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 475934, guid: 2664b8722d7595349abd4f64264a9ec4, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 475934, guid: 2664b8722d7595349abd4f64264a9ec4, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 475934, guid: 2664b8722d7595349abd4f64264a9ec4, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 475934, guid: 2664b8722d7595349abd4f64264a9ec4, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 475934, guid: 2664b8722d7595349abd4f64264a9ec4, type: 2}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 153650, guid: 2664b8722d7595349abd4f64264a9ec4, type: 2}
+      propertyPath: m_Name
+      value: Small Meter Orb (2)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 2664b8722d7595349abd4f64264a9ec4, type: 2}
+  m_IsPrefabParent: 0
+--- !u!4 &667778082 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 475934, guid: 2664b8722d7595349abd4f64264a9ec4, type: 2}
+  m_PrefabInternal: {fileID: 667778081}
 --- !u!224 &755091850 stripped
 RectTransform:
   m_PrefabParentObject: {fileID: 22438000, guid: 4c46c7b7e9cbd7e4d810e226103f0ffd,
@@ -870,6 +920,56 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1001 &1041950018
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1846765622}
+    m_Modifications:
+    - target: {fileID: 475934, guid: 2664b8722d7595349abd4f64264a9ec4, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -198.41
+      objectReference: {fileID: 0}
+    - target: {fileID: 475934, guid: 2664b8722d7595349abd4f64264a9ec4, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -133.36356
+      objectReference: {fileID: 0}
+    - target: {fileID: 475934, guid: 2664b8722d7595349abd4f64264a9ec4, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 475934, guid: 2664b8722d7595349abd4f64264a9ec4, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 475934, guid: 2664b8722d7595349abd4f64264a9ec4, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 475934, guid: 2664b8722d7595349abd4f64264a9ec4, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 475934, guid: 2664b8722d7595349abd4f64264a9ec4, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 475934, guid: 2664b8722d7595349abd4f64264a9ec4, type: 2}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 153650, guid: 2664b8722d7595349abd4f64264a9ec4, type: 2}
+      propertyPath: m_Name
+      value: Small Meter Orb (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 2664b8722d7595349abd4f64264a9ec4, type: 2}
+  m_IsPrefabParent: 0
+--- !u!4 &1041950019 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 475934, guid: 2664b8722d7595349abd4f64264a9ec4, type: 2}
+  m_PrefabInternal: {fileID: 1041950018}
 --- !u!1 &1292255571
 GameObject:
   m_ObjectHideFlags: 0
@@ -1039,6 +1139,56 @@ Transform:
   m_Children: []
   m_Father: {fileID: 758395924}
   m_RootOrder: 3
+--- !u!1001 &1517780378
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1846765622}
+    m_Modifications:
+    - target: {fileID: 475934, guid: 2664b8722d7595349abd4f64264a9ec4, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -200.99
+      objectReference: {fileID: 0}
+    - target: {fileID: 475934, guid: 2664b8722d7595349abd4f64264a9ec4, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -135.85
+      objectReference: {fileID: 0}
+    - target: {fileID: 475934, guid: 2664b8722d7595349abd4f64264a9ec4, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 475934, guid: 2664b8722d7595349abd4f64264a9ec4, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 475934, guid: 2664b8722d7595349abd4f64264a9ec4, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 475934, guid: 2664b8722d7595349abd4f64264a9ec4, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 475934, guid: 2664b8722d7595349abd4f64264a9ec4, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 475934, guid: 2664b8722d7595349abd4f64264a9ec4, type: 2}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 153650, guid: 2664b8722d7595349abd4f64264a9ec4, type: 2}
+      propertyPath: m_Name
+      value: Small Meter Orb (3)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 2664b8722d7595349abd4f64264a9ec4, type: 2}
+  m_IsPrefabParent: 0
+--- !u!4 &1517780379 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 475934, guid: 2664b8722d7595349abd4f64264a9ec4, type: 2}
+  m_PrefabInternal: {fileID: 1517780378}
 --- !u!1 &1753756296
 GameObject:
   m_ObjectHideFlags: 0
@@ -1213,6 +1363,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1448128281}
+  - {fileID: 1041950019}
+  - {fileID: 667778082}
+  - {fileID: 1517780379}
   m_Father: {fileID: 1777908385}
   m_RootOrder: 7
 --- !u!1001 &1883772582
@@ -1359,7 +1512,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 484188, guid: 5f03a6fe5d771dc49bd7e70ac9e05f57, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 1.96
+      value: 1.02
       objectReference: {fileID: 0}
     - target: {fileID: 484188, guid: 5f03a6fe5d771dc49bd7e70ac9e05f57, type: 2}
       propertyPath: m_LocalPosition.z
@@ -1388,10 +1541,6 @@ Prefab:
     - target: {fileID: 169450, guid: 5f03a6fe5d771dc49bd7e70ac9e05f57, type: 2}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 178600, guid: 5f03a6fe5d771dc49bd7e70ac9e05f57, type: 2}
-      propertyPath: m_Layer
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5f03a6fe5d771dc49bd7e70ac9e05f57, type: 2}
