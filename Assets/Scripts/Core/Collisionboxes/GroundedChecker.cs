@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Landingbox : Collisionbox {
+public class GroundedChecker : Collisionbox {
     public Player owner;
 
     public LayerMask floorMask;
