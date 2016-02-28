@@ -105,7 +105,7 @@ public class Parameters : MonoBehaviour {
         return InputDirection.Left;
     }
 
-    public static Vector2 getVector(InputDirection dir)
+    public static Vector2 VectorToDir(InputDirection dir)
     {
         switch (dir)
         {

@@ -52,7 +52,7 @@ public class ParryState : State<Player>
     override public void FixedExecute()
     {
         if (duration > parry_duration)
-            player.selfBody.velocity = Parameters.getVector(Controls.getInputDirection(player)) * parryMovementSpeed;
+            player.selfBody.velocity = Parameters.VectorToDir(Controls.getInputDirection(player)) * parryMovementSpeed;
     }
 
     override public void Exit()

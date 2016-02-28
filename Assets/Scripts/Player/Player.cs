@@ -112,7 +112,7 @@ public class Player : Mobile {
             GameObject newFireball = Instantiate(prefabs[0]);
             newFireball.GetComponentInChildren<FireballHitbox>().owner = this;
             newFireball.transform.position = this.transform.position + new Vector3(0, 1, 0);
-            float xDir = Parameters.getVector(direction).x;
+            float xDir = Parameters.VectorToDir(direction).x;
             newFireball.GetComponent<Rigidbody2D>().velocity = new Vector3(xDir * 4, 0, 0);
         }
 

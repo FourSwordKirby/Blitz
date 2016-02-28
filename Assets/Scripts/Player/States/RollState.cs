@@ -20,7 +20,7 @@ public class RollState : State<Player> {
         Debug.Log("entered roll state");
         duration = roll_duration;
 
-        player.GetComponent<Rigidbody2D>().velocity = Parameters.getVector(player.direction) * player.rollSpeed;
+        player.GetComponent<Rigidbody2D>().velocity = Parameters.VectorToDir(player.direction) * player.rollSpeed;
 
         return;
     }

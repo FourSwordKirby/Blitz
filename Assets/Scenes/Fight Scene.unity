@@ -376,6 +376,33 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4c46c7b7e9cbd7e4d810e226103f0ffd, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &389797904 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 149680, guid: 5f03a6fe5d771dc49bd7e70ac9e05f57, type: 2}
+  m_PrefabInternal: {fileID: 1921776920}
+--- !u!114 &389797908
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 389797904}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1091abc69cdec747adb2f6a708dc9d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  name: 
+  owner: {fileID: 0}
+  damage: 0
+  knockbackVector: {x: 0, y: 0}
+  hitlag: 0
+  hitstun: 0
+  blockstun: 0
+  isProjectile: 0
+  shieldDamage: 0
+  prioirty: 0
+  meterGain: 0
+  effect: 0
 --- !u!1 &523060101
 GameObject:
   m_ObjectHideFlags: 0
@@ -1515,11 +1542,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 484188, guid: 5f03a6fe5d771dc49bd7e70ac9e05f57, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 2.09
+      value: 0.38
       objectReference: {fileID: 0}
     - target: {fileID: 484188, guid: 5f03a6fe5d771dc49bd7e70ac9e05f57, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 1.02
+      value: 4.77
       objectReference: {fileID: 0}
     - target: {fileID: 484188, guid: 5f03a6fe5d771dc49bd7e70ac9e05f57, type: 2}
       propertyPath: m_LocalPosition.z
@@ -1549,13 +1576,17 @@ Prefab:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 149680, guid: 5f03a6fe5d771dc49bd7e70ac9e05f57, type: 2}
-      propertyPath: m_IsActive
-      value: 0
+    - target: {fileID: 473200, guid: 5f03a6fe5d771dc49bd7e70ac9e05f57, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 5.005976
       objectReference: {fileID: 0}
-    - target: {fileID: 11431266, guid: 5f03a6fe5d771dc49bd7e70ac9e05f57, type: 2}
-      propertyPath: movementSpeed
-      value: 2
+    - target: {fileID: 473200, guid: 5f03a6fe5d771dc49bd7e70ac9e05f57, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 5.0059752
+      objectReference: {fileID: 0}
+    - target: {fileID: 473200, guid: 5f03a6fe5d771dc49bd7e70ac9e05f57, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 5.0059752
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5f03a6fe5d771dc49bd7e70ac9e05f57, type: 2}

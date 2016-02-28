@@ -8,7 +8,7 @@ public class GeneralHitbox : Hitbox {
         Hurtbox hurtbox = col.gameObject.GetComponent<Hurtbox>();
         if (hurtbox != null && hurtbox.owner != this.owner)
         {
-            float xDir = this.transform.parent.GetComponent<Rigidbody2D>().velocity.x;
+            float xDir = Parameters.VectorToDir(this.owner.direction).x;
             if (xDir == 0)
                 xDir = 1;
             else

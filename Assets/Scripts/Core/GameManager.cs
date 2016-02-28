@@ -106,7 +106,7 @@ public class GameManager : MonoBehaviour {
         float incrementDistance = 0.1f;
         float currentDistance = 0.0f;
 
-        increment = Parameters.getVector(direction) * incrementDistance;
+        increment = Parameters.VectorToDir(direction) * incrementDistance;
         while (pointCollides(newPosition))
         {
             currentDistance += incrementDistance;
