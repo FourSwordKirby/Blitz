@@ -11,7 +11,11 @@ public class FetchState : MonoBehaviour {
 		tempStateHolder = GameObject.Find ("TempState");
 		tempState = tempStateHolder.GetComponent<TempState> ();
 		if (tempState) {
-			print ("NEW SCENE LOAD : " + tempState.char1);
+			print ("NEW SCENE LOAD :" 
+                + "\nPlayer One:   " + tempState.playerOne
+                + "\nPlayer Two:   " + tempState.playerTwo
+                + "\nPlayer Three: " + tempState.playerThree
+                + "\nPlater Four:  " + tempState.playerFour);
 		}
 	}
 }
