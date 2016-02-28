@@ -16,6 +16,7 @@ public class AirState : State<Player>
     {
         if(player.grounded)
             player.selfBody.velocity = new Vector2(player.selfBody.velocity.x, player.jumpHeight);
+        player.grounded = false;
         return;
     }
 

@@ -31,6 +31,8 @@ public class HitState : State<Player>
         if (hitlag > 0)
         {
             hitlag -= Time.deltaTime;
+            player.selfBody.velocity = Vector2.zero;
+            
             if (hitlag <= 0)
             {
                 //transition into a tumble animation or something
@@ -41,6 +43,8 @@ public class HitState : State<Player>
                 //This formula might change in the future
                 knockback += DIVector;
 
+                if (player.grounded && knockback.y < 0)
+                    knockback = new Vector2(knockback.x, -0.8f * knockback.y);
                 player.selfBody.velocity = knockback;
             }
             return;

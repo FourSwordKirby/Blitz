@@ -13,6 +13,8 @@ public class StompHitbox : Hitbox {
             hurtbox.TakeDamage(damage);
             hurtbox.TakeHit(hitlag, hitstun, knockbackVector);
 
+
+            //This is what happens if they weren't shielding;
             owner.airJumps = owner.maxAirJumps;
             owner.selfBody.velocity = new Vector2(owner.selfBody.velocity.x, owner.jumpHeight);
             owner.ActionFsm.ChangeState(new AirState(owner, owner.ActionFsm));

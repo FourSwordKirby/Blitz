@@ -107,7 +107,7 @@ public class Player : Mobile {
         this.ActionFsm.Execute();
 
         //Testing of the other buttons
-        if (Controls.attackInputDown(this))
+        if (Controls.specialInputDown(this))
         {
             GameObject newFireball = Instantiate(prefabs[0]);
             newFireball.GetComponentInChildren<FireballHitbox>().owner = this;
