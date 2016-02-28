@@ -58,7 +58,8 @@ public class Player : Mobile {
     public Rigidbody2D selfBody { get; private set; }
     public CollisionboxManager hitboxManager { get; private set; }
     public ECB environmentCollisionBox;
-    public List<GameObject> prefabs;
+    public Shield shield;
+    public List<GameObject> projectilePrefabs;
     /*private GameObject bodyVisual;
     public PlayerSounds Sounds { get; private set; }
     */
@@ -109,7 +110,7 @@ public class Player : Mobile {
         //Testing of the other buttons
         if (Controls.specialInputDown(this))
         {
-            GameObject newFireball = Instantiate(prefabs[0]);
+            GameObject newFireball = Instantiate(projectilePrefabs[0]);
             newFireball.GetComponentInChildren<FireballHitbox>().owner = this;
             newFireball.transform.position = this.transform.position + new Vector3(0, 1, 0);
             float xDir = Parameters.VectorToDir(direction).x;

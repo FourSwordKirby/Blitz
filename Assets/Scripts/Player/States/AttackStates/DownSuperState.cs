@@ -27,12 +27,12 @@ public class DownSuperState : State<Player>
         if (player.grounded)
         {
             endlag = groundAnimEndlag;
-            GameObject LeftFlame = GameObject.Instantiate(player.prefabs[1]);
+            GameObject LeftFlame = GameObject.Instantiate(player.projectilePrefabs[1]);
             LeftFlame.GetComponentInChildren<FlameWaveHitbox>().owner = player;
             LeftFlame.transform.position = player.transform.position + new Vector3(-1, 0, 0);
             LeftFlame.GetComponent<Rigidbody2D>().velocity = new Vector3(-4, 0, 0);
 
-            GameObject RightFlame = GameObject.Instantiate(player.prefabs[1]);
+            GameObject RightFlame = GameObject.Instantiate(player.projectilePrefabs[1]);
             RightFlame.GetComponentInChildren<FlameWaveHitbox>().owner = player;
             RightFlame.transform.position = player.transform.position + new Vector3(1, 0, 0);
             RightFlame.GetComponent<Rigidbody2D>().velocity = new Vector3(4, 0, 0);
@@ -56,13 +56,13 @@ public class DownSuperState : State<Player>
             //When we initially land from the air, spawn flames
             if (timer == 0 && endlag == landingAnimEndlag)
             {
-                GameObject LeftFlame = GameObject.Instantiate(player.prefabs[1]);
+                GameObject LeftFlame = GameObject.Instantiate(player.projectilePrefabs[1]);
                 LeftFlame.GetComponentInChildren<FlameWaveHitbox>().owner = player;
                 LeftFlame.GetComponentInChildren<FlameWaveHitbox>().airborne = true;
                 LeftFlame.transform.position = player.transform.position + new Vector3(-1, 0, 0);
                 LeftFlame.GetComponent<Rigidbody2D>().velocity = new Vector3(-4, 0, 0);
 
-                GameObject RightFlame = GameObject.Instantiate(player.prefabs[1]);
+                GameObject RightFlame = GameObject.Instantiate(player.projectilePrefabs[1]);
                 RightFlame.GetComponentInChildren<FlameWaveHitbox>().owner = player;
                 RightFlame.GetComponentInChildren<FlameWaveHitbox>().airborne = true;
                 RightFlame.transform.position = player.transform.position + new Vector3(1, 0, 0);

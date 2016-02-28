@@ -49,6 +49,11 @@ public class IdleState : State<Player> {
         {
             player.ActionFsm.ChangeState(new DownSuperState(player, player.ActionFsm));
         }
+
+        if (Controls.shieldInputDown(player))
+        {
+            player.ActionFsm.ChangeState(new ShieldState(player, player.ActionFsm));
+        }
     }
 
     override public void FixedExecute(){    }
