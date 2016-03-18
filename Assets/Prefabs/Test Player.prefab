@@ -472,7 +472,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 0
   maxMeter: 0
-  movementSpeed: 2
+  movementSpeed: 5
   rollSpeed: 0
   friction: 0
   jumpHeight: 12
@@ -590,6 +590,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shieldSize: 5
+  currentShieldSize: 0
   sprite: {fileID: 21220888}
   hurtbox: {fileID: 11443400}
 --- !u!212 &21220888

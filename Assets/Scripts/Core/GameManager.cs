@@ -41,7 +41,7 @@ public class GameManager : MonoBehaviour {
         }
 
         stage = GameObject.FindObjectOfType<Stage>();
-        if (Players == null)
+        if (stage == null)
         {
             Debug.Log("Cannot locate stage");
         }
