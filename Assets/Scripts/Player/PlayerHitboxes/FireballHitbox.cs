@@ -19,15 +19,12 @@ public class FireballHitbox : Hitbox {
         if (hurtbox != null && hurtbox.owner != this.owner)
         {
             float xDir = this.transform.parent.GetComponent<Rigidbody2D>().velocity.x;
-            if (xDir == 0)
-                xDir = 1;
-            else
-                xDir = xDir / Mathf.Abs(xDir);
+            xDir = Mathf.Sign(xDir);
 
             Vector2 appliedKnockbackVector = new Vector2(knockbackVector.x * xDir, knockbackVector.y);
 
             hurtbox.TakeDamage(damage);
-            hurtbox.TakeHit(hitlag, hitstun, knockbackVector);
+            hurtbox.TakeHit(hitlag, hitstun, appliedKnockbackVector);
 
              
             owner.gainMeter(meterGain);

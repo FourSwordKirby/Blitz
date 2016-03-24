@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour {
 
     void Awake()
     {
+        /*
         if (instance == null)
         {
             instance = this;
@@ -27,6 +28,7 @@ public class GameManager : MonoBehaviour {
                 Destroy(this.gameObject);
             }
         }
+         */
 
         Camera = GameObject.FindObjectOfType<CameraControls>();
         if (Camera == null)
@@ -90,6 +92,9 @@ public class GameManager : MonoBehaviour {
             Debug.Log("P1 SUPER");
         if (Controls.pauseInputDown(Players[0]))
             Debug.Log("PAUSE");
+
+        if(!(Players.FindAll(player => player.stocks > 0).Count > 1))
+            StartCoroutine(this.GetComponent<changeLevel>().change("Result Scene"));
     }
 
     public static void PlayerDeath()

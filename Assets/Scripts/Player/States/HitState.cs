@@ -24,6 +24,10 @@ public class HitState : State<Player>
     override public void Enter()
     {
         //Go into a hit animation
+        if(knockback.magnitude < player.knockdownThreshold)
+            player.audioManager.play("softhit");
+        else
+            player.audioManager.play("hardhit");
     }
 
     override public void Execute()

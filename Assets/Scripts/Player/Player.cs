@@ -60,6 +60,7 @@ public class Player : Mobile {
     public ECB environmentCollisionBox;
     public Shield shield;
     public List<GameObject> projectilePrefabs;
+    public AudioManager audioManager;
     /*private GameObject bodyVisual;
     public PlayerSounds Sounds { get; private set; }
     */
@@ -102,19 +103,27 @@ public class Player : Mobile {
         State<Player> startState = new IdleState(this, this.ActionFsm);
         ActionFsm.InitialState(startState);
 	}
-	
+
+    /*temporary variables for the game swap*/
+    private float cooldownlength = 0.8f;
+    private float cooldown;
+
 	// Update is called once per frame
 	void Update () {
         this.ActionFsm.Execute();
 
         //Testing of the other buttons
-        if (Controls.specialInputDown(this))
+        this.cooldown -= Time.deltaTime;
+
+        if (Controls.specialInputDown(this) && cooldown <= 0)
         {
+            cooldown = cooldownlength;
+
             GameObject newFireball = Instantiate(projectilePrefabs[0]);
             newFireball.GetComponentInChildren<FireballHitbox>().owner = this;
             newFireball.transform.position = this.transform.position + new Vector3(0, 1, 0);
             float xDir = Parameters.VectorToDir(direction).x;
-            newFireball.GetComponent<Rigidbody2D>().velocity = new Vector3(xDir * 4, 0, 0);
+            newFireball.GetComponent<Rigidbody2D>().velocity = new Vector3(xDir * 6, 0, 0);
         }
 
         if (health <= 0)
@@ -137,6 +146,12 @@ public class Player : Mobile {
     {
         if (meterGain > 0)
             this.meter += meterGain;
+    }
+
+    public void useMeter(float meterUse)
+    {
+        if (meterUse > 0)
+            this.meter -= meterUse;
     }
 
     public void loseHealth(float damage)

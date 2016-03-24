@@ -24,6 +24,8 @@ public class DownSuperState : State<Player>
 
     override public void Enter()
     {
+        player.useMeter(20.0f);
+
         if (player.grounded)
         {
             endlag = groundAnimEndlag;

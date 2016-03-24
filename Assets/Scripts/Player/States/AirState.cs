@@ -43,7 +43,7 @@ public class AirState : State<Player>
         }
 
         //Doing air supers
-        if (Controls.superInputDown(player))
+        if (Controls.superInputDown(player) && player.meter > 20.0f)
         {
             player.ActionFsm.ChangeState(new DownSuperState(player, player.ActionFsm));
         }
