@@ -1,0 +1,37 @@
+Things to do:
+
+Add motion trails/visuals:
+	Use trail renderers (a base script in unity)
+	Just use solid color for your material
+
+Miranda's suggestions:
+	Suggestion for super flash effect
+		-add a filter on top of the screen which can be used for the actual super flash visuals.
+
+
+Rachel's suggestion
+	-Take the sprites we have bold the outlines to make the characters look better
+	-More effects because it looks boring
+	-Potentially use motion blur to cover up lag effects / choppiness
+	-Markers above the player to indicate which player is who
+	-Rachel should contact me with another contact's fighting game engine code thing.
+
+
+	Rachel game dezine ideas:
+		playabe 8.5 - 11 page fit game ideas
+
+
+Tommy's suggestion:
+	Fix attack lag before the stomp
+		-In the case were we have to limit scope to 2 attacks, make the fireball better
+	Make characters "feel" stronger
+
+Tom suggestion:
+	-Make the firebal more missle like
+	-Fewer but bigger projectiles for this scenario
+	-Color the outline for teams
+
+
+Daniel's suggestion:
+	For the super flash attack, freeze everything.
+		-To do this, set static variables on game object which need to stop	
