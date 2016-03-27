@@ -12,7 +12,8 @@ public class Player : Mobile {
     public float meter { get; private set; }
     public int stocks { get; private set; }
 
-    public float movementSpeed;
+    public float walkSpeed;
+    public float runSpeed;
     public float rollSpeed;
     public float friction;
     public float jumpHeight;

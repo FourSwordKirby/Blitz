@@ -11,7 +11,10 @@ public class IdleState : State<Player> {
         player = playerInstance;
     }
 
-    override public void Enter(){
+    override public void Enter()
+    {
+        //Used to slow you down as you land
+        player.selfBody.velocity = 0.5f * player.selfBody.velocity;
         player.anim.SetFloat("MoveSpeed", 0.0f);
     }
 

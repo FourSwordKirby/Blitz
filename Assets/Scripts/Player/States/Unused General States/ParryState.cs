@@ -33,7 +33,7 @@ public class ParryState : State<Player>
 
         player.hitboxManager.activateHitBox("Parrybox");
 
-        parryMovementSpeed = player.movementSpeed * 0.2f;
+        parryMovementSpeed = player.runSpeed * 0.2f;
     }
 
     override public void Execute()

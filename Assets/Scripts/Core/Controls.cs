@@ -8,6 +8,7 @@ public class Controls {
      * between crouching on a platform and falling through the platform
      */
     public const float FALL_THROUGH_THRESHOLD = 0.5f;
+    public const float deadzone = 0.5f;
 
     public static Vector2 getDirection(Player player)
     {
@@ -58,7 +59,12 @@ public class Controls {
             else
                 yAxis = Input.GetAxis("P4 Keyboard Vertical");
         }
-        return new Vector2(xAxis, yAxis);
+
+        Vector2 inputVector = new Vector2(xAxis, yAxis);
+        if (inputVector .magnitude < deadzone)
+            inputVector  = Vector2.zero;
+
+        return inputVector;
     }
 
     public static Parameters.InputDirection getInputDirection(Player player)

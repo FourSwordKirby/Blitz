@@ -38,8 +38,8 @@ public class MovementStartupState : State<Player> {
 
     override public void FixedExecute()
     {
-        if (player.GetComponent<Rigidbody2D>().velocity.magnitude >= player.movementSpeed)
-            player.GetComponent<Rigidbody2D>().velocity = player.GetComponent<Rigidbody2D>().velocity.normalized * player.movementSpeed;
+        if (player.GetComponent<Rigidbody2D>().velocity.magnitude >= player.runSpeed)
+            player.GetComponent<Rigidbody2D>().velocity = player.GetComponent<Rigidbody2D>().velocity.normalized * player.runSpeed;
         else
         {
             switch (player.direction)

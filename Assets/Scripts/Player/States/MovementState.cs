@@ -6,6 +6,7 @@ public class MovementState : State<Player> {
     private Player player;
     private Vector2 movementInputVector;
 
+    private Vector2 previousInputVector;
 
     public MovementState(Player playerInstance, StateMachine<Player> fsm)
         : base(playerInstance, fsm)
@@ -15,15 +16,16 @@ public class MovementState : State<Player> {
 
     override public void Enter()
     {
+        movementInputVector = Controls.getDirection(player);
     }
 
     override public void Execute()
     {
+        previousInputVector = movementInputVector;
         movementInputVector = Controls.getDirection(player);
-        player.anim.SetFloat("MoveSpeed", Mathf.Abs(movementInputVector.x));
 
         //Might want to change this stuff later to include transition states
-        if (movementInputVector.x == 0)
+        if (movementInputVector.x == 0 || (previousInputVector.x == 1.0f && movementInputVector.x < 1.0f))
         {
             player.ActionFsm.ChangeState(new IdleState(player, player.ActionFsm));
             return;
@@ -36,14 +38,17 @@ public class MovementState : State<Player> {
         }
 
         //Temporary measures until we get more animations.
-        if(movementInputVector.x != 0)
-            player.anim.SetFloat("DirX", movementInputVector.x/Mathf.Abs(movementInputVector.x));
+        player.anim.SetFloat("DirX", Mathf.Sign(movementInputVector.x));
+        player.anim.SetFloat("MoveSpeed", Mathf.Abs(movementInputVector.x));
         //player.anim.SetFloat("DirY", Mathf.Ceil(Parameters.getVector(player.direction).y));
     }
 
     override public void FixedExecute()
     {
-        player.selfBody.velocity = new Vector2(movementInputVector.x * player.movementSpeed, player.selfBody.velocity.y);
+        if(Mathf.Abs(movementInputVector.x) == 1)
+            player.selfBody.velocity = new Vector2(Mathf.Sign(movementInputVector.x) * player.runSpeed, player.selfBody.velocity.y);
+        else
+            player.selfBody.velocity = new Vector2(movementInputVector.x * player.walkSpeed, player.selfBody.velocity.y);
     }
 
     override public void Exit()
