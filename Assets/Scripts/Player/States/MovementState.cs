@@ -15,13 +15,12 @@ public class MovementState : State<Player> {
 
     override public void Enter()
     {
-        player.anim.SetFloat("MoveSpeed", 1.0f);
-        return;
     }
 
     override public void Execute()
     {
         movementInputVector = Controls.getDirection(player);
+        player.anim.SetFloat("MoveSpeed", Mathf.Abs(movementInputVector.x));
 
         //Might want to change this stuff later to include transition states
         if (movementInputVector.x == 0)

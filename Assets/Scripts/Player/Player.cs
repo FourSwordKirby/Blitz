@@ -18,6 +18,7 @@ public class Player : Mobile {
     public float jumpHeight;
     public float fallSpeed;
     public float airMovementSpeed;
+    public float airDrift;
 
     public float knockdownThreshold;
 

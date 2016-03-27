@@ -507,6 +507,7 @@ MonoBehaviour:
   jumpHeight: 12
   fallSpeed: 0
   airMovementSpeed: 5
+  airDrift: 0.75
   knockdownThreshold: 3
   grounded: 1
   maxAirJumps: 1
