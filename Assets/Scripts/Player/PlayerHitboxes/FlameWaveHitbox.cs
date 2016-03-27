@@ -41,15 +41,15 @@ public class FlameWaveHitbox : Hitbox {
             {
                 Vector2 appliedKnockbackVector = new Vector2(knockbackVector.x * xDir, knockbackVector.y);
 
-                hurtbox.TakeDamage(damage);
-                hurtbox.TakeHit(hitlag, hitstun, appliedKnockbackVector);
+                hurtbox.TakeDamage(damage, shieldDamage);
+                hurtbox.TakeHit(hitlag, hitstun, blockstun, appliedKnockbackVector);
             }
             else
             {
                 Vector2 appliedKnockbackVector = airborneMod * new Vector2(knockbackVector.x * xDir, knockbackVector.y);
 
-                hurtbox.TakeDamage(airborneMod * damage);
-                hurtbox.TakeHit(hitlag, hitstun, appliedKnockbackVector);
+                hurtbox.TakeDamage(airborneMod * damage, airborneMod * shieldDamage);
+                hurtbox.TakeHit(hitlag, hitstun, blockstun, appliedKnockbackVector);
             }
 
             Destroy(this.transform.parent.gameObject);

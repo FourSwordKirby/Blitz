@@ -23,8 +23,8 @@ public class FireballHitbox : Hitbox {
 
             Vector2 appliedKnockbackVector = new Vector2(knockbackVector.x * xDir, knockbackVector.y);
 
-            hurtbox.TakeDamage(damage);
-            hurtbox.TakeHit(hitlag, hitstun, appliedKnockbackVector);
+            hurtbox.TakeDamage(damage, shieldDamage);
+            hurtbox.TakeHit(hitlag, hitstun, blockstun, appliedKnockbackVector);
 
              
             owner.gainMeter(meterGain);

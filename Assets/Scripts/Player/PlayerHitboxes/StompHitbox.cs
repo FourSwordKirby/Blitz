@@ -10,8 +10,8 @@ public class StompHitbox : Hitbox {
         {
             Vector2 appliedKnockbackVector = new Vector2(knockbackVector.x, knockbackVector.y);
 
-            hurtbox.TakeDamage(damage);
-            hurtbox.TakeHit(hitlag, hitstun, knockbackVector);
+            hurtbox.TakeDamage(damage, shieldDamage);
+            hurtbox.TakeHit(hitlag, hitstun, blockstun, knockbackVector);
 
 
             //This is what happens if they weren't shielding;

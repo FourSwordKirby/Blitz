@@ -14,7 +14,7 @@ public class ShieldState :  State<Player> {
     override public void Enter()
     {
         player.shield.RaiseShield();
-        return;
+        player.hitboxManager.deactivateHitBox("TestHurtbox");
     }
 
     override public void Execute()
@@ -37,6 +37,6 @@ public class ShieldState :  State<Player> {
     override public void Exit()
     {
         player.shield.LowerShield();
-        return;
+        player.hitboxManager.activateHitBox("TestHurtbox");
     }
 }

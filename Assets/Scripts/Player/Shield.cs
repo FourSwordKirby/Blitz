@@ -9,7 +9,7 @@ public class Shield : MonoBehaviour {
     public float shieldSize;
     public float currentShieldSize;
 
-    private bool raised;
+    public bool raised { get; private set; }
 
     /*self references*/
     private Vector3 initialScale;
