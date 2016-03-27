@@ -40,8 +40,10 @@ public class IdleState : State<Player> {
 
         //falling through platform
         //This needs to be fixed to not just shove me in an air state. It will kick my ass later
+        Debug.Log(player + " " + Controls.getDirection(player).y);
         if (Controls.getDirection(player).y < -Controls.FALL_THROUGH_THRESHOLD)
         {
+
             player.grounded = false;
             player.environmentCollisionBox.fallThrough();
             player.ActionFsm.ChangeState(new AirState(player, player.ActionFsm));

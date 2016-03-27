@@ -9,6 +9,7 @@ public class Controls {
      */
     public const float FALL_THROUGH_THRESHOLD = 0.5f;
     public const float deadzone = 0.5f;
+    public const float axisThreshold = 0.5f;
 
     public static Vector2 getDirection(Player player)
     {
@@ -60,8 +61,13 @@ public class Controls {
                 yAxis = Input.GetAxis("P4 Keyboard Vertical");
         }
 
+        if (Mathf.Abs(xAxis) < axisThreshold)
+            xAxis = 0;
+        if (Mathf.Abs(yAxis) < axisThreshold)
+            yAxis = 0;
+
         Vector2 inputVector = new Vector2(xAxis, yAxis);
-        if (inputVector .magnitude < deadzone)
+        if (inputVector.magnitude < deadzone)
             inputVector  = Vector2.zero;
 
         return inputVector;
