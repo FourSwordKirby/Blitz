@@ -205,6 +205,7 @@ MonoBehaviour:
   meterGain: 2
   effect: 0
   decayTime: 5
+  explodePrefab: {fileID: 105912, guid: f7a33f5ebd53dbe4f979272b2a2cf051, type: 2}
 --- !u!212 &21221754
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -298,6 +299,10 @@ Prefab:
       propertyPath: trail
       value: 
       objectReference: {fileID: 9648612}
+    - target: {fileID: 0}
+      propertyPath: explodePrefab
+      value: 
+      objectReference: {fileID: 105912, guid: f7a33f5ebd53dbe4f979272b2a2cf051, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 142996}
