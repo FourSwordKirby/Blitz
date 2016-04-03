@@ -220,7 +220,7 @@ Transform:
   m_GameObject: {fileID: 172094646}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -201, y: -136.25, z: 0}
-  m_LocalScale: {x: 22.195534, y: 22.195526, z: 22.195526}
+  m_LocalScale: {x: 23.027864, y: 14.232883, z: 22.195526}
   m_Children: []
   m_Father: {fileID: 1777908385}
   m_RootOrder: 4
@@ -235,6 +235,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea89933486f0c33459fad2afebfaef5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deathEffectPrefab: {fileID: 128364, guid: eb6d49e079398e64dadce82cf025d868, type: 2}
 --- !u!1 &179935488
 GameObject:
   m_ObjectHideFlags: 0
@@ -1592,7 +1593,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2134211797}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 478a2083ad114a07d000fbfb8d76c639, type: 3}
   m_Name: 

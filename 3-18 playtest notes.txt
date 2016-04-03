@@ -1,11 +1,9 @@
 Things to do:
 
-Fireballs lose trails after death
-Double jumping can make you fall through platforms
+Programming: include being blasted effect
 
-Add motion trails/visuals:
-	Use trail renderers (a base script in unity)
-	Just use solid color for your material
+Priority: Fireball firing animation
+		Fireball stomp animation
 
 Miranda's suggestions:
 	Suggestion for super flash effect
@@ -17,11 +15,6 @@ Rachel's suggestion
 	-More effects because it looks boring
 	-Potentially use motion blur to cover up lag effects / choppiness
 	-Markers above the player to indicate which player is who
-	-Rachel should contact me with another contact's fighting game engine code thing.
-
-
-	Rachel game dezine ideas:
-		playabe 8.5 - 11 page fit game ideas
 
 
 Tommy's suggestion:
@@ -33,8 +26,3 @@ Tom suggestion:
 	-Make the firebal more missle like
 	-Fewer but bigger projectiles for this scenario
 	-Color the outline for teams
-
-
-Daniel's suggestion:
-	For the super flash attack, freeze everything.
-		-To do this, set static variables on game object which need to stop	
