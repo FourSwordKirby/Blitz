@@ -55,6 +55,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3263b2cdca0e3f4384610d0bb556f32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  meterEffectPrefab: {fileID: 105912, guid: aabba6cc10a56bf458cfcee8e99973ec, type: 2}
   meterGain: 20
   respawnTime: 4
   sprite: {fileID: 21291936}
@@ -95,7 +96,11 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: meterEffectPrefab
+      value: 
+      objectReference: {fileID: 105912, guid: aabba6cc10a56bf458cfcee8e99973ec, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 153650}

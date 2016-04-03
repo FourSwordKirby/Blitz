@@ -147,7 +147,7 @@ public class Player : Mobile {
     public void gainMeter(float meterGain)
     {
         if (meterGain > 0)
-            this.meter += meterGain;
+            this.meter = Mathf.Clamp(this.meter + meterGain, 0, this.maxMeter) ;
     }
 
     public void useMeter(float meterUse)

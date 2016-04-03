@@ -3,6 +3,8 @@ using System.Collections;
 
 public class MeterOrb : MonoBehaviour {
 
+    public GameObject meterEffectPrefab;
+
     public int meterGain;
 
     public float respawnTime;
@@ -34,11 +36,19 @@ public class MeterOrb : MonoBehaviour {
 
         if (playerOriginPoint != null)
         {
+            playMeterEffect(col.transform.position);
+
             playerOriginPoint.player.gainMeter(meterGain);
             respawnTimer = respawnTime;
 
             sprite.enabled = false;
             pickupBox.enabled = false;
         }
+    }
+
+    private void playMeterEffect(Vector2 location, ParticleSystem playerDeathEffect = null)
+    {
+        GameObject meterEffect = Instantiate(meterEffectPrefab);
+        meterEffect.gameObject.transform.position = location;
     }
 }

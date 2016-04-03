@@ -1,6 +1,6 @@
 Things to do:
 
-Programming: include being blasted effect
+Programming: includ orb pickup effect
 
 Priority: Fireball firing animation
 		Fireball stomp animation
