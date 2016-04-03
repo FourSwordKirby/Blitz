@@ -16,6 +16,13 @@ public class FireballHitbox : Hitbox {
     void OnTriggerEnter2D(Collider2D col)
     {
         Hurtbox hurtbox = col.gameObject.GetComponent<Hurtbox>();
+        Hitbox hitbox = col.gameObject.GetComponent<Hitbox>();
+
+        if (hitbox != null && hitbox.owner != this.owner)
+        {
+            Destroy(this.gameObject);
+        }
+
         if (hurtbox != null && hurtbox.owner != this.owner)
         {
             float xDir = this.transform.parent.GetComponent<Rigidbody2D>().velocity.x;
