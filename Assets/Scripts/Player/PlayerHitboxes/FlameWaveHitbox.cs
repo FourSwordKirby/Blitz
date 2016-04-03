@@ -53,8 +53,12 @@ public class FlameWaveHitbox : Hitbox {
                 hurtbox.TakeHit(hitlag, hitstun, blockstun, appliedKnockbackVector);
             }
 			Vector3 loc = col.gameObject.transform.position;
-			Instantiate (explodePrefab, loc, Quaternion.identity);	
+		    
+			Instantiate (explodePrefab, loc, Quaternion.identity);
+			Instantiate (explodePrefab, (loc + new Vector3(0.3f,0.5f,0f)), Quaternion.identity);
+			Instantiate (explodePrefab, (loc + new Vector3(-0.3f,0.5f,0f)), Quaternion.identity);
             Destroy(this.transform.parent.gameObject);
         }
     }
+
 }
