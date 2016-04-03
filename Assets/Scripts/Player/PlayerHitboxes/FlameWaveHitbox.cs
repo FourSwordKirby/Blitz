@@ -13,6 +13,7 @@ public class FlameWaveHitbox : Hitbox {
     public float airborneMod;
 
     public float decayTime;
+	public GameObject explodePrefab;
 
     void Update()
     {
@@ -51,7 +52,8 @@ public class FlameWaveHitbox : Hitbox {
                 hurtbox.TakeDamage(airborneMod * damage, airborneMod * shieldDamage);
                 hurtbox.TakeHit(hitlag, hitstun, blockstun, appliedKnockbackVector);
             }
-
+			Vector3 loc = col.gameObject.transform.position;
+			Instantiate (explodePrefab, loc, Quaternion.identity);	
             Destroy(this.transform.parent.gameObject);
         }
     }

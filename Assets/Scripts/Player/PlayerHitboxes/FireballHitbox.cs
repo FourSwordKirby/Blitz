@@ -3,6 +3,7 @@ using System.Collections;
 
 public class FireballHitbox : Hitbox {
     public float decayTime;
+	public GameObject explodePrefab;
 
     void Update()
     {
@@ -32,8 +33,8 @@ public class FireballHitbox : Hitbox {
 
             hurtbox.TakeDamage(damage, shieldDamage);
             hurtbox.TakeHit(hitlag, hitstun, blockstun, appliedKnockbackVector);
-
-             
+			Vector3 loc = col.gameObject.transform.position;
+			Instantiate (explodePrefab, loc, Quaternion.identity);	
             owner.gainMeter(meterGain);
 
             Destroy(this.transform.parent.gameObject);
