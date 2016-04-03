@@ -35,6 +35,6 @@ public class RespawnState : State<Player>
     override public void Exit()
     {
         player.selfBody.isKinematic = false;
-        player.hitboxManager.deactivateAllHitboxes();
+        player.hitboxManager.activateAllHitboxes();
     }
 }
