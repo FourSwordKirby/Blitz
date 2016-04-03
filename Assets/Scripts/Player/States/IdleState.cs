@@ -40,7 +40,6 @@ public class IdleState : State<Player> {
 
         //falling through platform
         //This needs to be fixed to not just shove me in an air state. It will kick my ass later
-        Debug.Log(player + " " + Controls.getDirection(player).y);
         if (Controls.getDirection(player).y < -Controls.FALL_THROUGH_THRESHOLD)
         {
 
@@ -50,7 +49,7 @@ public class IdleState : State<Player> {
             return;
         }
 
-        if (Controls.superInputDown(player))
+        if (Controls.superInputDown(player) && player.meter > 20.0f)
         {
             player.ActionFsm.ChangeState(new DownSuperState(player, player.ActionFsm));
         }

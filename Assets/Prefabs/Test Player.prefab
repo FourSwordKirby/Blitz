@@ -11,7 +11,7 @@ GameObject:
   - 61: {fileID: 6107904}
   - 114: {fileID: 11412826}
   m_Layer: 0
-  m_Name: TestECB
+  m_Name: PlayerECB
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -178,8 +178,8 @@ GameObject:
   - 4: {fileID: 488198}
   - 61: {fileID: 6182826}
   - 114: {fileID: 11472642}
-  m_Layer: 0
-  m_Name: colECB
+  m_Layer: 11
+  m_Name: FloorECB
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

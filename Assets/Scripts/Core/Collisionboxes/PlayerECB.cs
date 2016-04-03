@@ -9,7 +9,7 @@ public class PlayerECB : MonoBehaviour {
         if (col.GetComponent<PlayerECB>() != null)
         {
             Vector2 displacementVector = this.transform.position - col.transform.position;
-            player.selfBody.velocity += displacementVector.normalized * 0.25f;
+            player.selfBody.velocity += displacementVector.normalized * 0.2f;
         }
     }
 }

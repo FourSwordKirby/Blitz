@@ -1,7 +1,6 @@
 Things to do:
 
 Fireballs lose trails after death
-Add collision layers
 Double jumping can make you fall through platforms
 
 Add motion trails/visuals:

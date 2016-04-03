@@ -15,9 +15,8 @@ public class DownSuperState : State<Player>
 
     public DownSuperState(Player playerInstance, StateMachine<Player> fsm) : base(playerInstance, fsm)
     {
-        Time.timeScale = 0.2f;
+        TimeController.SlowDownTime(0.1f);
         player = playerInstance;
-        superFlashTime = 0.1f;
         groundAnimEndlag = 0.1f;
         landingAnimEndlag = 0.3f;
     }
@@ -49,10 +48,6 @@ public class DownSuperState : State<Player>
 
     override public void Execute()
     {
-        superFlashTime -= Time.deltaTime;
-        if (superFlashTime < 0)
-            Time.timeScale = 1.0f;
-
         if (player.grounded)
         {
             //When we initially land from the air, spawn flames
