@@ -1,7 +1,5 @@
 Things to do:
 
-Programming: includ orb pickup effect
-
 Priority: Fireball firing animation
 		Fireball stomp animation
 

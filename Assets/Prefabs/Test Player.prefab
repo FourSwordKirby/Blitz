@@ -571,7 +571,7 @@ MonoBehaviour:
   maxAirDashes: 1
   airJumps: 0
   airDashes: 0
-  environmentCollisionBox: {fileID: 0}
+  environmentCollisionBox: {fileID: 11472642}
   shield: {fileID: 11496862}
   projectilePrefabs:
   - {fileID: 142996, guid: 79906aa9daebb4d4da698be60a875aa1, type: 2}
