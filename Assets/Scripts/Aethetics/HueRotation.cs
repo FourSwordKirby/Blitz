@@ -10,7 +10,10 @@ public class HueRotation : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		hueRotate (rotationAngle);
+	}
 
+	public void hueRotate (float rot) {
 		//to understand the math behind this matrix, see: www.graficaobscura.com/matrix
 		Material something = GetComponent<Renderer> ().material;
 
@@ -37,8 +40,8 @@ public class HueRotation : MonoBehaviour {
 		HueTrans = zshear (HueTrans, zsx, zsy);
 
 		//rotate the hue
-		float zrs = Mathf.Sin (rotationAngle * Mathf.Deg2Rad);
-		float zrc = Mathf.Cos (rotationAngle * Mathf.Deg2Rad);
+		float zrs = Mathf.Sin (rot * Mathf.Deg2Rad);
+		float zrc = Mathf.Cos (rot * Mathf.Deg2Rad);
 
 		HueTrans = zrotate (HueTrans, zrs, zrc);
 
