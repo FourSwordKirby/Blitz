@@ -29,13 +29,24 @@ public class HueRotation : MonoBehaviour {
 
 		HueTrans = yrotate (HueTrans, yrs, yrc);
 
+		//shear space to make luminance plane horizontal
+		Vector3 lumTrans = HueTrans.MultiplyPoint3x4(new Vector3(RLUM, GLUM, BLUM));
+		float zsx = lumTrans.x / lumTrans.z;
+		float zsy = lumTrans.y / lumTrans.z;
+
+		HueTrans = zshear (HueTrans, zsx, zsy);
+
 		//rotate the hue
 		float zrs = Mathf.Sin (rotationAngle * Mathf.Deg2Rad);
 		float zrc = Mathf.Cos (rotationAngle * Mathf.Deg2Rad);
 
 		HueTrans = zrotate (HueTrans, zrs, zrc);
 
-		//undo previous rotations
+		//unshear space
+
+		HueTrans = zshear (HueTrans, -zsx, -zsy);
+
+		//unrotate space
 		HueTrans = yrotate (HueTrans, -yrs, yrc);
 		HueTrans = xrotate (HueTrans, -xrs, xrc);
 
@@ -67,6 +78,16 @@ public class HueRotation : MonoBehaviour {
 		rotmat.SetRow (0, new Vector4 (rcos, -rsin, 0, 0));
 		rotmat.SetRow (1, new Vector4 (rsin, rcos, 0, 0));
 		rotmat.SetRow (2, new Vector4 (0, 0, 1, 0));
+		rotmat.SetRow (3, new Vector4 (0, 0, 0, 1));
+
+		return rotmat * mat;
+	}
+
+	Matrix4x4 zshear (Matrix4x4 mat, float dx, float dy) {
+		Matrix4x4 rotmat = new Matrix4x4 ();
+		rotmat.SetRow (0, new Vector4 (1, 0, 0, 0));
+		rotmat.SetRow (1, new Vector4 (0, 1, 0, 0));
+		rotmat.SetRow (2, new Vector4 (dx, dy, 1, 0));
 		rotmat.SetRow (3, new Vector4 (0, 0, 0, 1));
 
 		return rotmat * mat;
