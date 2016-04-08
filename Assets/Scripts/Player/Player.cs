@@ -124,7 +124,8 @@ public class Player : Mobile {
         if (cooldown < -0.6f)
             fireballCount = 0;
 
-        if (Controls.specialInputDown(this) && cooldown <= 0 && fireballCount < 2)
+        if (Controls.specialInputDown(this) && cooldown <= 0 && fireballCount < 2
+            && (ActionFsm.CurrentState.GetType().ToString() != "RespawnState" && ActionFsm.CurrentState.GetType().ToString() != "HitState"))
         {
             anim.SetTrigger("Fire");
             audioManager.play("fireballstartalt");
