@@ -39,6 +39,7 @@ public class MeterOrb : MonoBehaviour {
             playMeterEffect(col.transform.position);
 
             playerOriginPoint.player.gainMeter(meterGain);
+            playerOriginPoint.player.audioManager.play("getorb");
             respawnTimer = respawnTime;
 
             sprite.enabled = false;

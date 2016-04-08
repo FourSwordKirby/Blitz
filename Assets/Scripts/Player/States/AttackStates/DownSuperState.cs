@@ -24,6 +24,8 @@ public class DownSuperState : State<Player>
     override public void Enter()
     {
         player.useMeter(20.0f);
+        player.audioManager.play("airstompstart");
+
 
         if (player.grounded)
         {
@@ -53,6 +55,9 @@ public class DownSuperState : State<Player>
             //When we initially land from the air, spawn flames
             if (timer == 0 && endlag == landingAnimEndlag)
             {
+                player.audioManager.play("stompland");
+
+
                 GameObject LeftFlame = GameObject.Instantiate(player.projectilePrefabs[1]);
                 LeftFlame.GetComponentInChildren<FlameWaveHitbox>().owner = player;
                 LeftFlame.GetComponentInChildren<FlameWaveHitbox>().airborne = true;

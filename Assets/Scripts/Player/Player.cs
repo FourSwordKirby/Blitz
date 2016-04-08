@@ -107,8 +107,10 @@ public class Player : Mobile {
 	}
 
     /*temporary variables for the game swap*/
-    private float cooldownlength = 0.8f;
+    private float cooldownlength = 0.2f;
     private float cooldown;
+    private int fireballCount = 0;
+
 
 	// Update is called once per frame
 	void Update () {
@@ -119,11 +121,15 @@ public class Player : Mobile {
 
         //Testing of the other buttons
         this.cooldown -= Time.deltaTime;
+        if (cooldown < -0.6f)
+            fireballCount = 0;
 
-        if (Controls.specialInputDown(this) && cooldown <= 0)
+        if (Controls.specialInputDown(this) && cooldown <= 0 && fireballCount < 2)
         {
             anim.SetTrigger("Fire");
+            audioManager.play("fireballstartalt");
             cooldown = cooldownlength;
+            fireballCount++;
 
             GameObject newFireball = Instantiate(projectilePrefabs[0]);
             newFireball.GetComponentInChildren<FireballHitbox>().owner = this;
@@ -169,6 +175,7 @@ public class Player : Mobile {
     public void Die()
     {
         this.stocks--;
+        audioManager.play("die");
         if (stocks > 0)
         {
             this.transform.position = GameManager.GetRespawnPosition();

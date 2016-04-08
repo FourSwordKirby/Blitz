@@ -17,6 +17,7 @@ public class AirState : State<Player>
         if (player.grounded)
         {
             player.anim.SetTrigger("Jump");
+            player.audioManager.play("jump");
             player.selfBody.velocity = new Vector2(player.selfBody.velocity.x, player.jumpHeight);
         }
         player.grounded = false;
@@ -40,6 +41,7 @@ public class AirState : State<Player>
         //Doing double jumps
         if (Controls.jumpInputDown(player) && player.airJumps < player.maxAirJumps)
         {
+            player.audioManager.play("doublejump");
             player.airJumps++;
             player.selfBody.velocity = new Vector2(player.selfBody.velocity.x, player.jumpHeight);
             return;

@@ -363,7 +363,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 169450}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.72, y: 0.86, z: 0}
+  m_LocalPosition: {x: 0.38, y: 4.77, z: 0}
   m_LocalScale: {x: 0.33043396, y: 0.33043396, z: 0.33043396}
   m_Children:
   - {fileID: 455744}
@@ -653,6 +653,15 @@ MonoBehaviour:
   soundEffects:
   - {fileID: 8300000, guid: d82e3413c6e2acc4ca74ba73402a1723, type: 3}
   - {fileID: 8300000, guid: ee98b4886959e7b45bbba71865079ef1, type: 3}
+  - {fileID: 8300000, guid: f88e21fc2ee98574192824ab6595ae40, type: 3}
+  - {fileID: 8300000, guid: af677bb71be17174b8817ee3e328b036, type: 3}
+  - {fileID: 8300000, guid: 6ac24302f8bb9144ca70a132c2b51462, type: 3}
+  - {fileID: 8300000, guid: 14204533eba0c294499494a98b3d3737, type: 3}
+  - {fileID: 8300000, guid: f0f634e2cf5cc0843b19da0649f9c541, type: 3}
+  - {fileID: 8300000, guid: 5bb2623cbaf4ef447844cf1f52fe37ee, type: 3}
+  - {fileID: 8300000, guid: ddac3bce0f0804b4bb45199d8c1c7827, type: 3}
+  - {fileID: 8300000, guid: 4ee6989e22dd13a4f917e3d8f890275e, type: 3}
+  - {fileID: 8300000, guid: de98a84f536d5854da08a89509177088, type: 3}
 --- !u!114 &11483892
 MonoBehaviour:
   m_ObjectHideFlags: 1
