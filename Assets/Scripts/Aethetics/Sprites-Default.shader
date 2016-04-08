@@ -47,6 +47,7 @@ Shader "Custom/Default"
 			};
 			
 			fixed4 _Color;
+			fixed4x4 _HueTransform;
 
 			v2f vert(appdata_t IN)
 			{
@@ -79,6 +80,7 @@ Shader "Custom/Default"
 			fixed4 frag(v2f IN) : SV_Target
 			{
 				fixed4 c = SampleSpriteTexture (IN.texcoord) * IN.color;
+				c = mul(_HueTransform, c);
 				c.rgb *= c.a;
 				return c;
 			}
