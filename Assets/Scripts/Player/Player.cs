@@ -112,6 +112,9 @@ public class Player : Mobile {
 
 	// Update is called once per frame
 	void Update () {
+        //Note when we are grounded in the animation
+        anim.SetBool("Grounded", grounded);
+
         this.ActionFsm.Execute();
 
         //Testing of the other buttons
@@ -119,6 +122,7 @@ public class Player : Mobile {
 
         if (Controls.specialInputDown(this) && cooldown <= 0)
         {
+            anim.SetTrigger("Fire");
             cooldown = cooldownlength;
 
             GameObject newFireball = Instantiate(projectilePrefabs[0]);

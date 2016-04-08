@@ -14,8 +14,11 @@ public class AirState : State<Player>
 
     override public void Enter()
     {
-        if(player.grounded)
+        if (player.grounded)
+        {
+            player.anim.SetTrigger("Jump");
             player.selfBody.velocity = new Vector2(player.selfBody.velocity.x, player.jumpHeight);
+        }
         player.grounded = false;
         return;
     }
