@@ -12,6 +12,6 @@ public class testShaderTHing : MonoBehaviour {
 		Material something = GetComponent<Renderer> ().material;
 
 		Matrix4x4 HueTrans = new Matrix4x4 ();
-		something.SetMatrix ("_HueTransform", gpasoihgpiaos);
+		something.SetMatrix ("_HueTransform", HueTrans);
 	}
 }
