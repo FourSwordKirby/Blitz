@@ -63,6 +63,7 @@ public class Player : Mobile {
     public Shield shield;
     public List<GameObject> projectilePrefabs;
     public AudioManager audioManager;
+    public GameObject chargeTrail;
     /*private GameObject bodyVisual;
     public PlayerSounds Sounds { get; private set; }
     */
