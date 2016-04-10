@@ -15,7 +15,7 @@ public class HueRotation : MonoBehaviour {
 
 	public void hueRotate (float rot) {
 		//to understand the math behind this matrix, see: www.graficaobscura.com/matrix
-		Material something = GetComponent<Renderer> ().material;
+		Material rendMat = GetComponent<Renderer> ().material;
 
 		Matrix4x4 HueTrans = Matrix4x4.identity;
 
@@ -53,7 +53,7 @@ public class HueRotation : MonoBehaviour {
 		HueTrans = yrotate (HueTrans, -yrs, yrc);
 		HueTrans = xrotate (HueTrans, -xrs, xrc);
 
-		something.SetMatrix ("_HueTransform", HueTrans);
+		rendMat.SetMatrix ("_HueTransform", HueTrans);
 	}
 
 	Matrix4x4 xrotate (Matrix4x4 mat, float rsin, float rcos) {

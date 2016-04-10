@@ -162,7 +162,7 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 836575513}
+      - m_Target: {fileID: 346014182}
         m_MethodName: setPlayerTwo
         m_Mode: 1
         m_Arguments:
@@ -394,7 +394,7 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 836575513}
+      - m_Target: {fileID: 346014182}
         m_MethodName: setPlayerOne
         m_Mode: 1
         m_Arguments:
@@ -802,6 +802,53 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 222831801}
+--- !u!1 &346014181
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 346014183}
+  - 114: {fileID: 346014182}
+  m_Layer: 0
+  m_Name: SetChar
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &346014182
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 346014181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eac0a701d6151ba4b81e3fb2fdd4728b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  P1Red: {fileID: 1681430211}
+  P1Green: {fileID: 1270207218}
+  P1Blue: {fileID: 605377064}
+  P1Purple: {fileID: 94579864}
+  P2Red: {fileID: 1566617086}
+  P2Green: {fileID: 1416040873}
+  P2Blue: {fileID: 1979033408}
+  P2Purple: {fileID: 11828488}
+--- !u!4 &346014183
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 346014181}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 272, y: 148.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
 --- !u!1 &385291782
 GameObject:
   m_ObjectHideFlags: 0
@@ -1348,7 +1395,7 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 836575513}
+      - m_Target: {fileID: 346014182}
         m_MethodName: setPlayerOne
         m_Mode: 1
         m_Arguments:
@@ -1487,16 +1534,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc7171a71c3f739459e43415ac8e1fca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  P1Red: {fileID: 1681430211}
-  P1Green: {fileID: 1270207218}
-  P1Blue: {fileID: 605377064}
-  P1Purple: {fileID: 94579864}
-  P2Red: {fileID: 1566617086}
-  P2Green: {fileID: 1416040873}
-  P2Blue: {fileID: 1979033408}
-  P2Purple: {fileID: 11828488}
-  playerOne: Red
-  playerTwo: Green
 --- !u!1 &914164184
 GameObject:
   m_ObjectHideFlags: 0
@@ -1962,7 +1999,7 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 836575513}
+      - m_Target: {fileID: 346014182}
         m_MethodName: setPlayerOne
         m_Mode: 1
         m_Arguments:
@@ -2120,7 +2157,7 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 836575513}
+      - m_Target: {fileID: 346014182}
         m_MethodName: setPlayerTwo
         m_Mode: 1
         m_Arguments:
@@ -2346,7 +2383,7 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 836575513}
+      - m_Target: {fileID: 346014182}
         m_MethodName: setPlayerTwo
         m_Mode: 1
         m_Arguments:
@@ -2437,7 +2474,7 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 836575513}
+      - m_Target: {fileID: 346014182}
         m_MethodName: setPlayerOne
         m_Mode: 1
         m_Arguments:
@@ -2843,7 +2880,7 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 836575513}
+      - m_Target: {fileID: 346014182}
         m_MethodName: setPlayerTwo
         m_Mode: 1
         m_Arguments:

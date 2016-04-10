@@ -19,20 +19,25 @@ public class FetchState : MonoBehaviour {
 		if (tempState) {
 			p1rot = p1.GetComponent<HueRotation> ();
 			p2rot = p2.GetComponent<HueRotation> ();
-			if (tempState.playerOne == "Green") {
+
+			if (tempState.state["playerOne"] == tempState.state["playerTwo"]) {
+				p2.GetComponent<Renderer> ().material.SetColor ("_Color", new Color(.5f, .5f, .5f, 1f));
+			}
+
+			if (tempState.state["playerOne"] == "Green") {
 				p1rot.hueRotate (90);
-			} else if (tempState.playerOne == "Blue") {
+			} else if (tempState.state["playerOne"] == "Blue") {
 				p1rot.hueRotate (240);
-			} else if (tempState.playerOne == "Purple") {
+			} else if (tempState.state["playerOne"] == "Purple") {
 				p1rot.hueRotate (300);
 			} else {
 				p1rot.hueRotate (0);
 			}
-			if (tempState.playerTwo == "Red") {
+			if (tempState.state["playerTwo"] == "Red") {
 				p2rot.hueRotate (0);
-			} else if (tempState.playerTwo == "Blue") {
+			} else if (tempState.state["playerTwo"] == "Blue") {
 				p2rot.hueRotate (240);
-			} else if (tempState.playerTwo == "Purple") {
+			} else if (tempState.state["playerTwo"] == "Purple") {
 				p2rot.hueRotate (300);
 			} else {
 				p2rot.hueRotate (90);
