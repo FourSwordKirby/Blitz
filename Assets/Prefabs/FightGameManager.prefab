@@ -40,9 +40,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 1793a1b280f8b97498588fb7876b1d27, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 7a738658a796e5a4cb41e16f4f30a661, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.05
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -117,7 +117,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fadeIn: 1
-  fadeTime: 2
+  fadeTime: 1
   fadeColor: {r: 0, g: 0, b: 0, a: 1}
   fadeMaterial: {fileID: 2100000, guid: e642b458f4453e04ab7e2b711c58db98, type: 2}
 --- !u!114 &11427616

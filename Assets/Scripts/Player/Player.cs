@@ -109,6 +109,8 @@ public class Player : Mobile {
     /*temporary variables for the game swap*/
     private float cooldownlength = 0.2f;
     private float cooldown;
+    private float sledgeCooldownlength = 1.5f;
+    private float sledgeCooldown;
     private int fireballCount = 0;
 
 
@@ -138,6 +140,19 @@ public class Player : Mobile {
             float xDir = Parameters.VectorToDir(direction).x;
             newFireball.GetComponent<Rigidbody2D>().velocity = new Vector3(xDir * 6, 0, 0);
         }
+
+        this.sledgeCooldown -= Time.deltaTime;
+
+        if (Controls.attackInputDown(this) && sledgeCooldown <= 0 && Controls.getDirection(this) != Vector2.zero
+            && (ActionFsm.CurrentState.GetType().ToString() != "RespawnState" && ActionFsm.CurrentState.GetType().ToString() != "HitState"))
+        {
+            anim.SetTrigger("Charge");
+            audioManager.play("charge");
+            cooldown = cooldownlength;
+
+            this.ActionFsm.ChangeState(new ChargeState(this, this.ActionFsm));
+        }
+
 
         if (health <= 0)
         {
