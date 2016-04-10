@@ -179,7 +179,6 @@ GameObject:
   - 50: {fileID: 5043688}
   - 95: {fileID: 9582840}
   - 114: {fileID: 11405928}
-  - 114: {fileID: 11424186}
   m_Layer: 0
   m_Name: Test Player
   m_TagString: Untagged
@@ -651,7 +650,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb3efae674730e946aa2824aade489ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationAngle: 330
+  rotationAngle: 0
 --- !u!114 &11412826
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -679,18 +678,6 @@ MonoBehaviour:
   floorMask:
     serializedVersion: 2
     m_Bits: 256
---- !u!114 &11424186
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 169450}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fb3efae674730e946aa2824aade489ae, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rotationAngle: 150
 --- !u!114 &11425572
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -702,7 +689,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb3efae674730e946aa2824aade489ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationAngle: 90
+  rotationAngle: 0
 --- !u!114 &11426986
 MonoBehaviour:
   m_ObjectHideFlags: 1

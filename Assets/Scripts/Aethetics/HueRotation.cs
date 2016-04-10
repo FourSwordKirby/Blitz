@@ -3,19 +3,34 @@ using System.Collections;
 
 public class HueRotation : MonoBehaviour {
 
-	public float rotationAngle;
 	private const float RLUM = 0.3086f;
 	private const float GLUM = 0.6094f;
 	private const float BLUM = 0.0820f;
+	private float rotationAngle = 0;
+
+	public float RotationAngle {
+		get{ return rotationAngle; }
+		set{ 
+			if (value != rotationAngle) {
+				hueRotate (value);
+				rotationAngle = value;
+			}
+		}
+	}
 
 	// Use this for initialization
 	void Start () {
 		hueRotate (rotationAngle);
 	}
 
+	void OnEnable() {
+		hueRotate (rotationAngle);
+	}
+
 	public void hueRotate (float rot) {
 		//to understand the math behind this matrix, see: www.graficaobscura.com/matrix
 		Material rendMat = GetComponent<Renderer> ().material;
+		Debug.Log (rendMat);
 
 		Matrix4x4 HueTrans = Matrix4x4.identity;
 
@@ -48,8 +63,6 @@ public class HueRotation : MonoBehaviour {
 		//unshear space
 
 		HueTrans = zshear (HueTrans, -zsx, -zsy);
-
-        
 
 		//unrotate space
 		HueTrans = yrotate (HueTrans, -yrs, yrc);
