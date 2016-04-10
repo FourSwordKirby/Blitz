@@ -88,7 +88,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 483514}
-  - 61: {fileID: 6187690}
+  - 58: {fileID: 5808550}
   - 114: {fileID: 11426986}
   m_Layer: 0
   m_Name: ChargeHitbox
@@ -376,7 +376,7 @@ Transform:
   m_GameObject: {fileID: 168220}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 5.005976, y: 5.0059752, z: 5.0059752}
+  m_LocalScale: {x: 2.6581993, y: 2.6581988, z: 2.6581988}
   m_Children: []
   m_Father: {fileID: 455744}
   m_RootOrder: 2
@@ -412,7 +412,7 @@ Transform:
   m_GameObject: {fileID: 149680}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.05, z: 0}
-  m_LocalScale: {x: 4.302823, y: 4.302824, z: 4.302824}
+  m_LocalScale: {x: 3.2510054, y: 3.2510061, z: 3.2510061}
   m_Children: []
   m_Father: {fileID: 454032}
   m_RootOrder: 1
@@ -423,7 +423,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 169450}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.91, y: 0.33, z: 0}
+  m_LocalPosition: {x: -3.19, y: 0.25, z: 0}
   m_LocalScale: {x: 0.33043396, y: 0.33043396, z: 0.33043396}
   m_Children:
   - {fileID: 455744}
@@ -463,6 +463,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!58 &5808550
+CircleCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 149680}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
 --- !u!61 &6107904
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -528,20 +542,6 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 6200000, guid: 6d117cfff7649b44c981b62a4af06220, type: 2}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1}
---- !u!61 &6187690
-BoxCollider2D:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 149680}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
@@ -650,7 +650,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb3efae674730e946aa2824aade489ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationAngle: 0
 --- !u!114 &11412826
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -689,7 +688,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb3efae674730e946aa2824aade489ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationAngle: 0
 --- !u!114 &11426986
 MonoBehaviour:
   m_ObjectHideFlags: 1

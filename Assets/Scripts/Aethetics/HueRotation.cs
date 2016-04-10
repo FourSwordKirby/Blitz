@@ -30,7 +30,6 @@ public class HueRotation : MonoBehaviour {
 	public void hueRotate (float rot) {
 		//to understand the math behind this matrix, see: www.graficaobscura.com/matrix
 		Material rendMat = GetComponent<Renderer> ().material;
-		Debug.Log (rendMat);
 
 		Matrix4x4 HueTrans = Matrix4x4.identity;
 
