@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using System.Linq;
 
 public class GameManager : MonoBehaviour {
-    private static GameManager instance;
+	private static GameManager instance;
+	private GameObject tempStateHolder; 
+	private TempState tempState;
 
     public static List<Player> Players;
     public static CameraControls Camera;
@@ -55,7 +57,11 @@ public class GameManager : MonoBehaviour {
     void Start()
     {
         //Initialize some physics.
-        Physics2D.gravity = new Vector2(0.0f, -10.0f);
+		Physics2D.gravity = new Vector2(0.0f, -10.0f);
+		tempStateHolder = GameObject.Find ("TempState");
+		if (tempStateHolder) {
+			tempState = tempStateHolder.GetComponent<TempState> ();
+		}
     }
 
     /*public static void LoadScene(string sceneName, bool persistPlayer = true)
@@ -93,8 +99,14 @@ public class GameManager : MonoBehaviour {
         if (Controls.pauseInputDown(Players[0]))
             Debug.Log("PAUSE");
 
-        if(!(Players.FindAll(player => player.stocks > 0).Count > 1))
-            StartCoroutine(this.GetComponent<changeLevel>().change("Result Scene"));
+
+		if (!(Players.FindAll (player => player.stocks > 0).Count > 1)) {
+			Player winner = Players.FindAll (player => player.stocks > 0).First<Player>();
+			Debug.Log ("winner is:");
+			Debug.Log (winner.gameObject.name);
+			tempState.state ["Winner"] = winner.gameObject.name;
+			StartCoroutine (this.GetComponent<changeLevel> ().change ("Result Scene"));
+		}
     }
 
     public static void PlayerDeath()
