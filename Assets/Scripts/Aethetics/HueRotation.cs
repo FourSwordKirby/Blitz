@@ -17,6 +17,8 @@ public class HueRotation : MonoBehaviour {
 		//to understand the math behind this matrix, see: www.graficaobscura.com/matrix
 		Material something = GetComponent<Renderer> ().material;
 
+        Debug.Log(something);
+
 		Matrix4x4 HueTrans = Matrix4x4.identity;
 
 		//rotate HueTrans into positive Z 
@@ -49,11 +51,14 @@ public class HueRotation : MonoBehaviour {
 
 		HueTrans = zshear (HueTrans, -zsx, -zsy);
 
+        
+
 		//unrotate space
 		HueTrans = yrotate (HueTrans, -yrs, yrc);
 		HueTrans = xrotate (HueTrans, -xrs, xrc);
 
 		something.SetMatrix ("_HueTransform", HueTrans);
+        Debug.Log(HueTrans);
 	}
 
 	Matrix4x4 xrotate (Matrix4x4 mat, float rsin, float rcos) {
