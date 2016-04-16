@@ -3,6 +3,8 @@ using System.Collections;
 
 public class StompHitbox : Hitbox {
 
+    public GameObject explodePrefab;
+
     void OnTriggerEnter2D(Collider2D col)
     {
         Hurtbox hurtbox = col.gameObject.GetComponent<Hurtbox>();
@@ -18,6 +20,9 @@ public class StompHitbox : Hitbox {
             owner.airJumps = owner.maxAirJumps;
             owner.selfBody.velocity = new Vector2(owner.selfBody.velocity.x, owner.jumpHeight);
             owner.ActionFsm.ChangeState(new AirState(owner, owner.ActionFsm));
+
+            Vector3 loc = col.gameObject.transform.position;
+            Instantiate(explodePrefab, loc, Quaternion.identity);	
         }
     }
 }

@@ -31,6 +31,8 @@ public class Player : Mobile {
     public int airJumps;
     public int airDashes;
 
+    public bool isStunned;
+
     public Parameters.InputDirection direction { get; set; }
     
     //Tells us the status of the player (things that affect the hitbox)
@@ -59,6 +61,7 @@ public class Player : Mobile {
     public Animator anim { get; private set; }
     public Rigidbody2D selfBody { get; private set; }
     public CollisionboxManager hitboxManager { get; private set; }
+    public PlayerECB playerCollisionBox;
     public ECB environmentCollisionBox;
     public Shield shield;
     public List<GameObject> projectilePrefabs;
@@ -120,6 +123,26 @@ public class Player : Mobile {
         //Note when we are grounded in the animation
         anim.SetBool("Grounded", grounded);
 
+        //A check to see if the player is stunned
+        if (health <= 0 && !isStunned)
+        {
+            isStunned = true;
+        }
+
+        //If the player is stunned lock out all controls
+        if (isStunned)
+        {
+            if (health < maxHealth)
+            {
+                health = Mathf.Clamp(health + Time.deltaTime * 20.0f, 0, maxHealth);
+                if (health == maxHealth)
+                    isStunned = false;
+            }
+            if(ActionFsm.CurrentState.GetType().ToString() == "HitState")
+                this.ActionFsm.Execute();
+            return;
+        }
+
         this.ActionFsm.Execute();
 
         //Testing of the other buttons
@@ -153,12 +176,6 @@ public class Player : Mobile {
             this.ActionFsm.ChangeState(new ChargeState(this, this.ActionFsm));
         }
 
-        //Overrides other actions if the player is dead
-        if (health <= 0)
-        {
-            this.Die();
-        }
-
         if (stocks <= 0)
             Debug.Log("Player defeated");
 	}
@@ -183,7 +200,7 @@ public class Player : Mobile {
     public void loseHealth(float damage)
     {
         if (damage > 0)
-            this.health -= damage;
+            this.health = Mathf.Clamp(this.health-damage, 0, maxHealth);
     }
 
     public void Die()
@@ -194,6 +211,7 @@ public class Player : Mobile {
         {
             this.transform.position = GameManager.GetRespawnPosition();
             ActionFsm.ChangeState(new RespawnState(this, this.ActionFsm));
+            isStunned = false;
             this.health = maxHealth;
         }
     }

@@ -13,6 +13,7 @@ public class RespawnState : State<Player>
         player = playerInstance;
         player.selfBody.isKinematic = true;
         player.hitboxManager.deactivateAllHitboxes();
+        player.playerCollisionBox.gameObject.SetActive(false);
     }
 
     override public void Enter()
@@ -36,5 +37,6 @@ public class RespawnState : State<Player>
     {
         player.selfBody.isKinematic = false;
         player.hitboxManager.activateHitBox("TestHurtbox");
+        player.playerCollisionBox.gameObject.SetActive(true);
     }
 }

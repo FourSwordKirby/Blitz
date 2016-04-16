@@ -11,8 +11,11 @@ public class StageBoundary : MonoBehaviour {
 
         if (playerOriginPoint != null)
         {
-            float angle = Vector3.Angle(col.gameObject.transform.position, this.gameObject.transform.position);
-            playDeathEffect(col.gameObject.transform.position, 90);
+            Vector3 angleVector = col.gameObject.transform.position;
+            float angle = Mathf.Atan(angleVector.y / angleVector.x) * Mathf.Rad2Deg;
+            if(angleVector.x > 0)
+                angle += 180.0f;
+            playDeathEffect(col.gameObject.transform.position, angle);
             playerOriginPoint.player.Die();
         }
     }
@@ -21,6 +24,6 @@ public class StageBoundary : MonoBehaviour {
     {
         GameObject deathEffect = Instantiate(deathEffectPrefab);
         deathEffect.gameObject.transform.position = location;
-        deathEffect.gameObject.transform.rotation = Quaternion.EulerRotation(0, 0, -15f * rotation);
+        deathEffect.gameObject.transform.rotation = Quaternion.AngleAxis(-15f+ rotation, Vector3.forward);
     }
 }

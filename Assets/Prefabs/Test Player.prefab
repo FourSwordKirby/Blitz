@@ -434,7 +434,7 @@ Transform:
   m_GameObject: {fileID: 168220}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.6581993, y: 2.6581988, z: 2.6581988}
+  m_LocalScale: {x: 2.6581993, y: 3.5885687, z: 2.6581988}
   m_Children: []
   m_Father: {fileID: 455744}
   m_RootOrder: 2
@@ -470,7 +470,7 @@ Transform:
   m_GameObject: {fileID: 149680}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.05, z: 0}
-  m_LocalScale: {x: 3.2510054, y: 3.2510061, z: 3.2510061}
+  m_LocalScale: {x: 4.0298624, y: 4.0298643, z: 4.0298643}
   m_Children: []
   m_Father: {fileID: 454032}
   m_RootOrder: 1
@@ -773,15 +773,16 @@ MonoBehaviour:
   name: ChargeHitbox
   owner: {fileID: 11431266}
   damage: 5
-  knockbackVector: {x: 5, y: 5}
+  knockbackVector: {x: 10, y: 5}
   hitlag: 0.05
-  hitstun: 0.1
+  hitstun: 0.5
   blockstun: 0
   isProjectile: 0
   shieldDamage: 0
   prioirty: 0
   meterGain: 0
   effect: 0
+  explodePrefab: {fileID: 105912, guid: f7a33f5ebd53dbe4f979272b2a2cf051, type: 2}
 --- !u!114 &11431266
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -809,6 +810,8 @@ MonoBehaviour:
   maxAirDashes: 1
   airJumps: 0
   airDashes: 0
+  isStunned: 0
+  playerCollisionBox: {fileID: 11412826}
   environmentCollisionBox: {fileID: 11472642}
   shield: {fileID: 11496862}
   projectilePrefabs:
@@ -871,6 +874,7 @@ MonoBehaviour:
   prioirty: 0
   meterGain: 0
   effect: 0
+  explodePrefab: {fileID: 105912, guid: f7a33f5ebd53dbe4f979272b2a2cf051, type: 2}
 --- !u!114 &11470188
 MonoBehaviour:
   m_ObjectHideFlags: 1
