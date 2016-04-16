@@ -110,7 +110,7 @@ public class Player : Mobile {
     /*temporary variables for the game swap*/
     private float cooldownlength = 0.2f;
     private float cooldown;
-    private float sledgeCooldownlength = 1.5f;
+    private float sledgeCooldownlength = 0.8f;
     private float sledgeCooldown;
     private int fireballCount = 0;
 
@@ -147,19 +147,16 @@ public class Player : Mobile {
         if (Controls.attackInputDown(this) && sledgeCooldown <= 0 && Controls.getDirection(this) != Vector2.zero
             && (ActionFsm.CurrentState.GetType().ToString() != "RespawnState" && ActionFsm.CurrentState.GetType().ToString() != "HitState"))
         {
-            anim.SetTrigger("Charge");
             audioManager.play("charge");
-            cooldown = cooldownlength;
+            sledgeCooldown = sledgeCooldownlength;
 
             this.ActionFsm.ChangeState(new ChargeState(this, this.ActionFsm));
         }
 
-
+        //Overrides other actions if the player is dead
         if (health <= 0)
         {
-            stocks -= 1;
-            if(stocks > 0)
-                health = maxHealth;
+            this.Die();
         }
 
         if (stocks <= 0)
@@ -197,6 +194,7 @@ public class Player : Mobile {
         {
             this.transform.position = GameManager.GetRespawnPosition();
             ActionFsm.ChangeState(new RespawnState(this, this.ActionFsm));
+            this.health = maxHealth;
         }
     }
 }

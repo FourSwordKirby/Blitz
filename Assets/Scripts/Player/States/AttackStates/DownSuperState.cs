@@ -18,12 +18,14 @@ public class DownSuperState : State<Player>
         TimeController.SlowDownTime(0.1f);
         player = playerInstance;
         groundAnimEndlag = 0.1f;
-        landingAnimEndlag = 0.3f;
+        landingAnimEndlag = 0.2f;
     }
 
     override public void Enter()
     {
-        player.useMeter(20.0f);
+        player.anim.SetBool("Stomp", true);
+
+        player.useMeter(50.0f);
         player.audioManager.play("airstompstart");
 
 
@@ -89,15 +91,20 @@ public class DownSuperState : State<Player>
     {
         if (!player.grounded)
         {
+            player.selfBody.velocity = new Vector2(0, Mathf.Pow(Time.timeScale, 3.0f) * -20.0f);
+            /*
             if(Time.timeScale == 1.0f)
                 player.selfBody.velocity = new Vector2(0, -20.0f);
             else
                 player.selfBody.velocity = new Vector2(0, -2.0f);
+             */
         }
     }
 
     override public void Exit()
     {
+        player.anim.SetBool("Stomp", false);
+
         Time.timeScale = 1.0f;
         player.hitboxManager.deactivateHitBox("StompHitbox");
     }

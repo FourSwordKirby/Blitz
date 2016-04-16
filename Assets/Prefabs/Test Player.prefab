@@ -32,6 +32,23 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &116284
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 470206}
+  - 61: {fileID: 6108926}
+  - 114: {fileID: 11438128}
+  m_Layer: 0
+  m_Name: GroundedChecker
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &117746
 GameObject:
   m_ObjectHideFlags: 1
@@ -123,9 +140,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 407946}
   - 61: {fileID: 6193956}
-  - 114: {fileID: 11415556}
   m_Layer: 0
-  m_Name: GroundedChecker
+  m_Name: GroundedCheckerRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -218,6 +234,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &183136
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 465336}
+  - 61: {fileID: 6181702}
+  m_Layer: 0
+  m_Name: GroundedCheckerLeft
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &185460
 GameObject:
   m_ObjectHideFlags: 0
@@ -263,8 +295,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 459114}
-  - {fileID: 407946}
   - {fileID: 488198}
+  - {fileID: 470206}
   m_Father: {fileID: 484188}
   m_RootOrder: 2
 --- !u!4 &407946
@@ -274,10 +306,10 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 160414}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -1.36, z: 0}
-  m_LocalScale: {x: 0.7798432, y: 0.5624999, z: 1}
+  m_LocalPosition: {x: 2.3979173, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 401220}
+  m_Father: {fileID: 470206}
   m_RootOrder: 1
 --- !u!4 &432062
 Transform:
@@ -368,6 +400,32 @@ Transform:
   m_Children: []
   m_Father: {fileID: 455744}
   m_RootOrder: 1
+--- !u!4 &465336
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 183136}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 470206}
+  m_RootOrder: 0
+--- !u!4 &470206
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 116284}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.1699997, y: -1.36, z: 0}
+  m_LocalScale: {x: 0.7798432, y: 0.5624999, z: 1}
+  m_Children:
+  - {fileID: 465336}
+  - {fileID: 407946}
+  m_Father: {fileID: 401220}
+  m_RootOrder: 2
 --- !u!4 &473200
 Transform:
   m_ObjectHideFlags: 1
@@ -445,7 +503,7 @@ Transform:
   m_LocalScale: {x: 0.3984015, y: 0.3984016, z: 0.39840165}
   m_Children: []
   m_Father: {fileID: 401220}
-  m_RootOrder: 2
+  m_RootOrder: 1
 --- !u!50 &5043688
 Rigidbody2D:
   serializedVersion: 2
@@ -491,6 +549,20 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
+--- !u!61 &6108926
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 116284}
+  m_Enabled: 0
+  m_Density: 1
+  m_Material: {fileID: 6200000, guid: 6d117cfff7649b44c981b62a4af06220, type: 2}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
 --- !u!61 &6117614
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -529,6 +601,20 @@ BoxCollider2D:
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+--- !u!61 &6181702
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 183136}
+  m_Enabled: 0
+  m_Density: 1
+  m_Material: {fileID: 6200000, guid: 6d117cfff7649b44c981b62a4af06220, type: 2}
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
@@ -662,21 +748,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 11431266}
---- !u!114 &11415556
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 160414}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b1623f180dd76f247ba605a86ba7228a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  owner: {fileID: 11431266}
-  floorMask:
-    serializedVersion: 2
-    m_Bits: 256
 --- !u!114 &11425572
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -702,9 +773,9 @@ MonoBehaviour:
   name: ChargeHitbox
   owner: {fileID: 11431266}
   damage: 5
-  knockbackVector: {x: 0, y: 0}
-  hitlag: 0
-  hitstun: 0
+  knockbackVector: {x: 5, y: 5}
+  hitlag: 0.05
+  hitstun: 0.1
   blockstun: 0
   isProjectile: 0
   shieldDamage: 0
@@ -745,6 +816,23 @@ MonoBehaviour:
   - {fileID: 145692, guid: 0f9ff50bfad132b4283124581d08993f, type: 2}
   audioManager: {fileID: 11482054}
   chargeTrail: {fileID: 185460}
+--- !u!114 &11438128
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 116284}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1623f180dd76f247ba605a86ba7228a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  owner: {fileID: 11431266}
+  floorMask:
+    serializedVersion: 2
+    m_Bits: 256
+  leftCheck: {fileID: 183136}
+  rightCheck: {fileID: 160414}
 --- !u!114 &11443400
 MonoBehaviour:
   m_ObjectHideFlags: 1

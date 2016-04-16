@@ -49,11 +49,6 @@ public class IdleState : State<Player> {
             return;
         }
 
-        if (Controls.superInputDown(player) && player.meter > 20.0f)
-        {
-            player.ActionFsm.ChangeState(new DownSuperState(player, player.ActionFsm));
-        }
-
         if (Controls.shieldInputDown(player))
         {
             player.ActionFsm.ChangeState(new ShieldState(player, player.ActionFsm));

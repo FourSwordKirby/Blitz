@@ -18,9 +18,12 @@ public class ChargeState : State<Player>
 
     override public void Enter()
     {
+        player.anim.SetBool("Charge", true);
         player.chargeTrail.gameObject.SetActive(true);
         player.hitboxManager.activateHitBox("ChargeHitbox");
         direction = Controls.getDirection(player);
+
+        player.anim.SetFloat("DirX", direction.x);
     }
 
     override public void Execute()
@@ -42,6 +45,7 @@ public class ChargeState : State<Player>
 
     override public void Exit()
     {
+        player.anim.SetBool("Charge", false);
         player.chargeTrail.gameObject.SetActive(false);
         player.hitboxManager.deactivateHitBox("ChargeHitbox");
     }

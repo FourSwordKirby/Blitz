@@ -23,6 +23,9 @@ public class HitState : State<Player>
 
     override public void Enter()
     {
+        player.anim.SetFloat("Hitstun", hitstun);
+        player.anim.SetFloat("DirX", -knockback.x);
+
         //Go into a hit animation
         if(knockback.magnitude < player.knockdownThreshold)
             player.audioManager.play("softhit");
@@ -71,6 +74,7 @@ public class HitState : State<Player>
 
     override public void Exit()
     {
+        player.anim.SetFloat("Hitstun", -0.1f);
     }
 }
 
