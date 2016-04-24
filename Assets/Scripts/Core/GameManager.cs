@@ -104,8 +104,10 @@ public class GameManager : MonoBehaviour {
 			Player winner = Players.FindAll (player => player.stocks > 0).First<Player>();
 			Debug.Log ("winner is:");
 			Debug.Log (winner.gameObject.name);
-			tempState.state ["Winner"] = winner.gameObject.name;
-			StartCoroutine (this.GetComponent<changeLevel> ().change ("Result Scene"));
+            tempState.state["Winner"] = winner.gameObject.name;
+            TimeController.SlowDownTime(0.1f);
+            StartCoroutine(this.GetComponent<changeLevel>().EndGame());
+            StartCoroutine (this.GetComponent<changeLevel> ().change ("Result Scene"));
 		}
     }
 

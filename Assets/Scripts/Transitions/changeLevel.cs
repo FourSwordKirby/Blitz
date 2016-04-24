@@ -6,9 +6,22 @@ public class changeLevel : MonoBehaviour {
 
 	public IEnumerator change(string levelName, float time = 0.8f)
     {
-		float fadeTime = time;
-        this.GetComponent<ScreenFader>().fadeIn = false;
-        yield return this.GetComponent<ScreenFader>().FadeOut();
-        SceneManager.LoadScene(levelName);
+        GameObject.FindObjectOfType<ScreenFader>().FadeToBlack();
+        while (!GameObject.FindObjectOfType<ScreenFader>().finishedFade)
+        {
+            yield return new WaitForSeconds(0.1f);
+        }
+		SceneManager.LoadScene(levelName);
    	}
+
+    public IEnumerator EndGame()
+    {
+        float time = 1.0f;
+        while (time > 0)
+        {
+            time -= Time.deltaTime;
+            yield return new WaitForSeconds(0.1f);
+        }
+        Debug.Log("Game");
+    }
 }

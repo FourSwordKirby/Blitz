@@ -6,14 +6,25 @@ using System.Collections;
 /// </summary>
 public class ECB : Collisionbox {
 
+    private float fallThroughLength = 0.2f;
+    private float fallThroughTimer;
+
     public void fallThrough()
     {
         if(this.gameObject.layer == LayerMask.NameToLayer("Player"))
             this.gameObject.layer = LayerMask.NameToLayer("Fall Through");
     }
 
-    void OnCollisionExit2D()
+    void Update()
     {
-        this.gameObject.layer = LayerMask.NameToLayer("Player");
+        if(this.gameObject.layer == LayerMask.NameToLayer("Fall Through"))
+        {
+            fallThroughTimer -= Time.deltaTime;
+            if(fallThroughTimer < 0)
+            {
+                this.gameObject.layer = LayerMask.NameToLayer("Player");
+                fallThroughTimer = fallThroughLength;
+            }
+        }
     }
 }
