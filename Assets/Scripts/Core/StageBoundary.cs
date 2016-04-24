@@ -24,6 +24,6 @@ public class StageBoundary : MonoBehaviour {
     {
         GameObject deathEffect = Instantiate(deathEffectPrefab);
         deathEffect.gameObject.transform.position = location;
-        deathEffect.gameObject.transform.rotation = Quaternion.AngleAxis(-15f+ rotation, Vector3.forward);
+        deathEffect.gameObject.transform.rotation = Quaternion.AngleAxis(-90f+ rotation, Vector3.forward);
     }
 }
