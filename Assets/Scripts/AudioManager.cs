@@ -5,11 +5,14 @@ using System.Collections.Generic;
 public class AudioManager : MonoBehaviour {
 
     public List<AudioClip> soundEffects;
+	AudioSource audio;
+
+	void Start() {
+		audio = GetComponent<AudioSource>();
+	}
 
     public void play(string name)
     {
-        float volume = 100;
-
-        AudioSource.PlayClipAtPoint(soundEffects.Find(x => x.name == name), this.transform.position,volume);
+        audio.PlayOneShot(soundEffects.Find(x => x.name == name));
     }
 }
