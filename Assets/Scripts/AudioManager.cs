@@ -7,8 +7,9 @@ public class AudioManager : MonoBehaviour {
     public List<AudioClip> soundEffects;
 	AudioSource audio;
 
-	void Start() {
+	void Awake() {
 		audio = GetComponent<AudioSource>();
+        Debug.Log(audio);
 	}
 
     public void play(string name)

@@ -19,6 +19,7 @@ public class ScreenFader : MonoBehaviour
         FadeImg.rectTransform.localScale = new Vector2(Screen.width, Screen.height);
         fadeColor = FadeImg.color;
         previousColor = FadeImg.color;
+        fadeTime = 0.5f;
     }
 
     void Update()
