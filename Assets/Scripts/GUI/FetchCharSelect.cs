@@ -44,6 +44,7 @@ public class FetchCharSelect : MonoBehaviour {
 				p1rot.RotationAngle = 0;
 				p1chargeRot.RotationAngle = 0;
                 p1Portrait.GetComponent<Image>().color = Color.red;
+                Debug.Log(p1rot.rotateColor());
             }
 			if (tempState.state["playerTwo"] == "Red") {
 				p2rot.RotationAngle = 0;

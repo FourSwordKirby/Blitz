@@ -18,6 +18,11 @@ public class HueRotation : MonoBehaviour {
 		}
 	}
 
+    public Color rotateColor ()
+    {
+        return Color.HSVToRGB(RotationAngle / 360, 1, 1f);
+    }
+
 	// Use this for initialization
 	void Start () {
 		hueRotate (rotationAngle);

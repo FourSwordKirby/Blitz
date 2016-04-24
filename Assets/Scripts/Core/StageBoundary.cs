@@ -11,6 +11,8 @@ public class StageBoundary : MonoBehaviour {
 
         if (playerOriginPoint != null)
         {
+            Color deathColor = playerOriginPoint.player.GetComponent<HueRotation>().rotateColor();
+            deathEffectPrefab.GetComponent<DeathEffect>().color = deathColor;
             Vector3 angleVector = col.gameObject.transform.position;
             float angle = Mathf.Atan(angleVector.y / angleVector.x) * Mathf.Rad2Deg;
             if(angleVector.x > 0)
