@@ -8,7 +8,7 @@ public class ChargeState : State<Player>
     private float speed = 10.0f;
     private Vector2 direction;
     private float minimumActiveTime = 0.1f;
-    private float maximumActiveTime = 0.4f;
+    private float maximumActiveTime = 0.35f;
     private float activeTimer = 0.0f;
 
     public ChargeState(Player playerInstance, StateMachine<Player> fsm) : base(playerInstance, fsm)

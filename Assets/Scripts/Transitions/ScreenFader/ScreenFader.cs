@@ -1,96 +1,64 @@
-// This is free and unencumbered software released into the public domain.
-// For more information, please refer to <http://unlicense.org/>
-
-using System;
+﻿using UnityEngine;
 using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+using UnityEngine.UI;
 
 public class ScreenFader : MonoBehaviour
 {
-    public bool fadeIn = true;
-    public float fadeTime = 2.0f;
-    public Color fadeColor = new Color(0.0f, 0.0f, 0.0f, 1.0f);
-    public Material fadeMaterial = null;
-    
-    private bool faded = false;
-    private bool lastFadeIn = false;
-    private List<ScreenFadeControl> fadeControls = new List<ScreenFadeControl>();
+    public Image FadeImg;
+    public float fadeTime;
+    private float elapsedTime;
 
-    void SetFadersEnabled(bool value)
+    public bool finishedFade;
+
+    private Color fadeColor;
+    private Color previousColor;
+    private bool fadeOnce;
+
+    void Awake()
     {
-        foreach (ScreenFadeControl fadeControl in fadeControls)
-            fadeControl.enabled = value;
+        FadeImg.rectTransform.localScale = new Vector2(Screen.width, Screen.height);
+        fadeColor = FadeImg.color;
+        previousColor = FadeImg.color;
     }
 
-    public IEnumerator FadeOut()
+    void Update()
     {
-        if (!faded)
+        if(!finishedFade)
         {
-            // Derived from OVRScreenFade
-            float elapsedTime = 0.0f;
-            Color color = fadeColor;
-            color.a = 0.0f;
-            fadeMaterial.color = color;
-            while (elapsedTime < fadeTime)
-            {
-                yield return new WaitForEndOfFrame();
-                elapsedTime += Time.deltaTime;
-                color.a = Mathf.Clamp01(elapsedTime / fadeTime);
-                fadeMaterial.color = color;
-            }
-        }
-        faded = true;
-    }
-
-    public IEnumerator FadeIn()
-    {
-        if (faded)
-        {
-            float elapsedTime = 0.0f;
-            Color color = fadeMaterial.color = fadeColor;
-            while (elapsedTime < fadeTime)
-            {
-                yield return new WaitForEndOfFrame();
-                elapsedTime += Time.deltaTime;
-                color.a = 1.0f - Mathf.Clamp01(elapsedTime / fadeTime);
-                fadeMaterial.color = color;
-            }
-        }
-        faded = false;
-        SetFadersEnabled(false);
-    }
-
-    public void Update()
-    {
-        if (lastFadeIn != fadeIn)
-        {
-            lastFadeIn = fadeIn;
-            StartCoroutine(DoFade());
-        }
-    }
-    
-    public IEnumerator DoFade()
-    {
-        // Clean up from last fade
-        foreach (ScreenFadeControl fadeControl in fadeControls)
-        {
-            Destroy(fadeControl);
-        }
-        fadeControls.Clear();
-        
-        // Find all cameras and add fade material to them (initially disabled)
-        foreach (Camera c in Camera.allCameras)
-        {
-            var fadeControl = c.gameObject.AddComponent<ScreenFadeControl>();
-            fadeControl.fadeMaterial = fadeMaterial;
-            fadeControls.Add(fadeControl);
+            elapsedTime += Time.deltaTime;
+            Color difference = fadeColor - previousColor;
+            difference *= Mathf.Clamp(elapsedTime/fadeTime, 0, 1.0f);
+            FadeImg.color = previousColor + difference;
+        }else{
+            elapsedTime = 0.0f;
+            previousColor = fadeColor;
         }
 
-        // Do fade
-        if (fadeIn)
-            yield return StartCoroutine(FadeIn());
-        else
-            yield return StartCoroutine(FadeOut());
+        finishedFade = (FadeImg.color == fadeColor);
+
+        if (fadeOnce && finishedFade)
+        {
+            FadeToClear();
+            fadeOnce = false;
+        }
+    }
+
+
+    public void setFadeTime(float time)
+    {
+        fadeTime = time;
+    }
+
+    public void FadeToClear()
+    {
+        fadeColor = Color.clear;
+        finishedFade = false;
+    }
+
+
+    public void FadeToBlack()
+    {
+        fadeColor = Color.black;
+        finishedFade = false;
     }
 }

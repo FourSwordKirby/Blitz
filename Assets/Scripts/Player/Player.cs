@@ -115,6 +115,7 @@ public class Player : Mobile {
     private float cooldown;
     private float sledgeCooldownlength = 0.8f;
     private float sledgeCooldown;
+    private float sledgeCount = 0;
     private int fireballCount = 0;
 
 
@@ -166,12 +167,19 @@ public class Player : Mobile {
         }
 
         this.sledgeCooldown -= Time.deltaTime;
+        if (this.grounded)
+            sledgeCount = 0;
+
 
         if (Controls.attackInputDown(this) && sledgeCooldown <= 0 && Controls.getDirection(this) != Vector2.zero
-            && (ActionFsm.CurrentState.GetType().ToString() != "RespawnState" && ActionFsm.CurrentState.GetType().ToString() != "HitState"))
+            && (ActionFsm.CurrentState.GetType().ToString() != "RespawnState" && ActionFsm.CurrentState.GetType().ToString() != "HitState")
+            && sledgeCount < 3)
         {
             audioManager.play("charge");
             sledgeCooldown = sledgeCooldownlength;
+
+            if (!this.grounded)
+                sledgeCount++;
 
             this.ActionFsm.ChangeState(new ChargeState(this, this.ActionFsm));
         }
