@@ -135,14 +135,25 @@ public class Player : Mobile {
         {
             if (health < maxHealth)
             {
+                if (grounded)
+                    anim.SetBool("Dead", true);
+                else
+                    anim.SetBool("Dead", false);
+
                 health = Mathf.Clamp(health + Time.deltaTime * 20.0f, 0, maxHealth);
                 if (health == maxHealth)
                     isStunned = false;
             }
-            if(ActionFsm.CurrentState.GetType().ToString() == "HitState")
+            if (ActionFsm.CurrentState.GetType().ToString() == "HitState")
+            {
+                anim.SetBool("Dead", false);
                 this.ActionFsm.Execute();
+            }
             return;
         }
+        else
+            anim.SetBool("Dead", false);
+
 
         this.ActionFsm.Execute();
 
