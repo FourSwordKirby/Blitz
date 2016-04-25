@@ -6,14 +6,14 @@ public class BlinkingText : MonoBehaviour {
 
     public Text text;
     private float lowerAlpha = 0.4f;
-    private float alphaChange = 0.005f;
+    public float alphaChange = 0.005f;
     private bool increasing;
 
 	// Update is called once per frame
 	void Update () {
         if (increasing)
         {
-            text.color = new Color(text.color.a, text.color.g, text.color.b, text.color.a + alphaChange);
+            text.color = new Color(text.color.r, text.color.g, text.color.b, text.color.a + alphaChange);
             if (text.color.a == 1.0f)
             {
                 increasing = false;
@@ -21,7 +21,7 @@ public class BlinkingText : MonoBehaviour {
         }
         else
         {
-            text.color = new Color(text.color.a, text.color.g, text.color.b, text.color.a - alphaChange);
+            text.color = new Color(text.color.r, text.color.g, text.color.b, text.color.a - alphaChange);
             if (text.color.a <= lowerAlpha)
             {
                 increasing = true;

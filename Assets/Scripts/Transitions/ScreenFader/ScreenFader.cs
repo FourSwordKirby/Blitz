@@ -6,6 +6,8 @@ public class ScreenFader : MonoBehaviour
 {
     public Image FadeImg;
     public float fadeTime;
+    public bool fadeOnStart;
+
     private float elapsedTime;
 
     public bool finishedFade;
@@ -19,11 +21,17 @@ public class ScreenFader : MonoBehaviour
         FadeImg.rectTransform.localScale = new Vector2(Screen.width, Screen.height);
         fadeColor = FadeImg.color;
         previousColor = FadeImg.color;
-        fadeTime = 0.5f;
     }
 
     void Update()
     {
+        if (fadeOnStart)
+        {
+            FadeToClear();
+            fadeOnStart = false;
+            return;
+        }
+
         if(!finishedFade)
         {
             elapsedTime += Time.deltaTime;

@@ -182,7 +182,7 @@ GameObject:
   - 222: {fileID: 440598734}
   - 114: {fileID: 440598733}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Logo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -199,7 +199,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1562869099}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 7, y: 0.0000019073}
@@ -393,8 +393,8 @@ RectTransform:
   m_Children:
   - {fileID: 2060302444}
   - {fileID: 133781434}
-  - {fileID: 980405200}
   - {fileID: 440598732}
+  - {fileID: 980405200}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_AnchorMin: {x: 0, y: 0}
@@ -550,7 +550,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22478274, guid: 390137284f901f94c91a5f4eb2fe115c, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 22478274, guid: 390137284f901f94c91a5f4eb2fe115c, type: 2}
       propertyPath: m_AnchoredPosition.x
@@ -591,6 +591,10 @@ Prefab:
     - target: {fileID: 22478274, guid: 390137284f901f94c91a5f4eb2fe115c, type: 2}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11486914, guid: 390137284f901f94c91a5f4eb2fe115c, type: 2}
+      propertyPath: fadeTime
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 390137284f901f94c91a5f4eb2fe115c, type: 2}

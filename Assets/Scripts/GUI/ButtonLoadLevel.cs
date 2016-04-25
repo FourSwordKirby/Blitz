@@ -3,11 +3,15 @@ using System.Collections;
 
 public class ButtonLoadLevel : MonoBehaviour {
 
-	public void LoadLevelButton (int index) {
-		Application.LoadLevel (index);
-	}
-
-	public void LoadLevelButton (string name) {
-		Application.LoadLevel (name);
-	}
+    public bool clicked;
+    // Update is called once per frame
+    void Update()
+    {
+        if ((Input.GetButtonDown("P1 Attack") ||
+            Input.GetButtonDown("P2 Attack")) && !clicked)
+        {
+            clicked = true;
+            StartCoroutine(GameManager.FindObjectOfType<changeLevel>().change("Fight Scene"));
+        }
+    }
 }
