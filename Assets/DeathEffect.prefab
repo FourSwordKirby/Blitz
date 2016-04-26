@@ -17,6 +17,23 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &125698
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 408912}
+  - 96: {fileID: 9612938}
+  - 114: {fileID: 11439538}
+  m_Layer: 0
+  m_Name: Trail
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &164466
 GameObject:
   m_ObjectHideFlags: 0
@@ -51,7 +68,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &199156
 GameObject:
   m_ObjectHideFlags: 1
@@ -68,6 +85,18 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!4 &408912
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 125698}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 461082}
+  m_RootOrder: 1
 --- !u!4 &429334
 Transform:
   m_ObjectHideFlags: 1
@@ -92,7 +121,7 @@ Transform:
   m_Children:
   - {fileID: 429334}
   m_Father: {fileID: 461082}
-  m_RootOrder: 1
+  m_RootOrder: 2
 --- !u!4 &461082
 Transform:
   m_ObjectHideFlags: 1
@@ -100,10 +129,11 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100588}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.75, y: 0.75, z: 0.75}
   m_Children:
   - {fileID: 475028}
+  - {fileID: 408912}
   - {fileID: 433938}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -119,6 +149,53 @@ Transform:
   m_Children: []
   m_Father: {fileID: 461082}
   m_RootOrder: 0
+--- !u!96 &9612938
+TrailRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 125698}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 0
+  m_Materials:
+  - {fileID: 2100000, guid: bb878e90e2b26f046a4f5319a7689189, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_ReflectionProbeUsage: 1
+  m_ProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_Time: 1
+  m_StartWidth: 0.1
+  m_EndWidth: 0.05
+  m_Colors:
+    m_Color[0]:
+      serializedVersion: 2
+      rgba: 16777215
+    m_Color[1]:
+      serializedVersion: 2
+      rgba: 2164260863
+    m_Color[2]:
+      serializedVersion: 2
+      rgba: 4294967295
+    m_Color[3]:
+      serializedVersion: 2
+      rgba: 2164260863
+    m_Color[4]:
+      serializedVersion: 2
+      rgba: 16777215
+  m_MinVertexDistance: 0.05
+  m_Autodestruct: 0
 --- !u!114 &11401314
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -165,7 +242,7 @@ MonoBehaviour:
       m_PostInfinity: 2
       m_RotationOrder: 0
     amplitude: 3
-    frequency: 1
+    frequency: 0.5
     phase: 0
     offset: 0
   curveY:
@@ -191,7 +268,7 @@ MonoBehaviour:
       m_PostInfinity: 2
       m_RotationOrder: 0
     amplitude: 20
-    frequency: 1
+    frequency: 0.5
     phase: 0
     offset: 0
   curveZ:
@@ -234,7 +311,35 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   triangle: {fileID: 191794}
-  color: {r: 0, g: 0.13103437, b: 1, a: 1}
+  trail: {fileID: 125698}
+  color: {r: 1, g: 0, b: 0, a: 1}
+--- !u!114 &11439538
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 125698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1123bdffece5e304c94b8f597656db25, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  heightCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 3.1239152
+      outSlope: 3.1239152
+      tangentMode: 0
+    - time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!114 &11455168
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -264,7 +369,7 @@ MonoBehaviour:
       m_PostInfinity: 2
       m_RotationOrder: 0
     amplitude: 1
-    frequency: 1
+    frequency: 0.5
     phase: 0
     offset: 0
   color: {r: 1, g: 0, b: 0, a: 1}
@@ -1786,7 +1891,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 29937bc49cef05c47a435bb17a459292, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0043047037cebb14a84d54c6218eeb14, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

@@ -15,6 +15,9 @@ public class GameManager : MonoBehaviour {
 
     private static List<GameObject> spawnPoints;
 
+    //Hacky thing used to end the game
+    public bool gameOver;
+
     void Awake()
     {
         /*
@@ -100,12 +103,13 @@ public class GameManager : MonoBehaviour {
             Debug.Log("PAUSE");
 
 
-		if (!(Players.FindAll (player => player.stocks > 0).Count > 1)) {
+		if (!(Players.FindAll (player => player.stocks > 0).Count > 1) && !gameOver) {
 			Player winner = Players.FindAll (player => player.stocks > 0).First<Player>();
 			Debug.Log ("winner is:");
 			Debug.Log (winner.gameObject.name);
             tempState.state["Winner"] = winner.gameObject.name;
             TimeController.SlowDownTime(0.1f);
+            gameOver = true;
             StartCoroutine(this.GetComponent<changeLevel>().EndGame());
             StartCoroutine (this.GetComponent<changeLevel> ().change ("Result Scene"));
 		}

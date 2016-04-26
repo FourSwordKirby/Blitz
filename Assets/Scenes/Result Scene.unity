@@ -209,6 +209,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FadeImg: {fileID: 853421184}
   fadeTime: 0
+  fadeOnStart: 0
   finishedFade: 0
 --- !u!1 &1494467930
 GameObject:
@@ -363,7 +364,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
