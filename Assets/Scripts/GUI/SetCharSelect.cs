@@ -28,26 +28,26 @@ public class SetCharSelect : MonoBehaviour {
 	}
 
 	public void setPlayerOne () {
-		if (P1Red.isOn) {
+		if (!P1Red.interactable) {
 			tempState.state ["playerOne"] = "Red";
-		} else if (P1Green.isOn) {
+		} else if (!P1Green.interactable) {
 			tempState.state ["playerOne"] = "Green";
-		} else if (P1Blue.isOn) {
+		} else if (!P1Blue.interactable) {
 			tempState.state ["playerOne"] = "Blue";
-		} else if (P1Purple.isOn) {
+		} else if (!P1Purple.interactable) {
 			tempState.state ["playerOne"] = "Purple";
 		}
 	}
 
 	public void setPlayerTwo ()
 	{
-		if (P2Red.isOn) {
+		if (!P2Red.interactable) {
 			tempState.state ["playerTwo"] = "Red";
-		} else if (P2Green.isOn) {
+		} else if (!P2Green.interactable) {
 			tempState.state ["playerTwo"] = "Green";
-		} else if (P2Blue.isOn) {
+		} else if (!P2Blue.interactable) {
 			tempState.state ["playerTwo"] = "Blue";
-		} else if (P2Purple.isOn) {
+		} else if (!P2Purple.interactable) {
 			tempState.state ["playerTwo"] = "Purple";
 		}
 	}

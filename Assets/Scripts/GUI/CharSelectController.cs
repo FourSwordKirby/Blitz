@@ -15,22 +15,18 @@ public class CharSelectController : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
+    private float timer = 0.0f;
 	void Update () {
+        if (!p1Controller.clicked && !p2Controller.clicked)
+        {
+            if (Input.GetButtonDown("P1 Special") || Input.GetButtonDown("P2 Special"))
+                StartCoroutine(GameManager.FindObjectOfType<changeLevel>().change("Title", 0.05f, true));
+        }
+
         if (done)
             return;
 
-        if (p1Controller.clicked && p2Controller.clicked)
-        {
-            if (p1Controller.currentIndex == p2Controller.currentIndex)
-            {
-                p1Controller.clicked = false;
-                p2Controller.clicked = false;
-                return;
-            }
-            stageController.gameObject.SetActive(true);
-        }
-
-        if(stageController.gameObject.activeSelf == true)
+        if (stageController.gameObject.activeSelf == true)
         {
             if ((Input.GetButtonDown("P1 Special") ||
                 Input.GetButtonDown("P2 Special")) && !stageController.clicked)
@@ -43,12 +39,27 @@ public class CharSelectController : MonoBehaviour {
             if (Input.GetButtonDown("P1 Attack") ||
                 Input.GetButtonDown("P2 Attack"))
             {
+                GameObject.FindObjectOfType<SetCharSelect>().setPlayerOne();
+                GameObject.FindObjectOfType<SetCharSelect>().setPlayerTwo();
                 done = true;
-                if(stageController.currentIndex == 0)
-                    StartCoroutine(GameManager.FindObjectOfType<changeLevel>().change("Fight Scene"));
+                GameObject.FindObjectOfType<bgmcontroller>().fadeOut = true;
+                if (stageController.currentIndex == 0)
+                    StartCoroutine(GameManager.FindObjectOfType<changeLevel>().change("Fight Scene", 0.05f, true));
                 if (stageController.currentIndex == 1)
-                    StartCoroutine(GameManager.FindObjectOfType<changeLevel>().change("Fight Scene 2"));
-           }
+                    StartCoroutine(GameManager.FindObjectOfType<changeLevel>().change("Fight Scene 2",0.05f,true));
+            }
+        }
+
+        if (p1Controller.clicked && p2Controller.clicked)
+        {
+            if (p1Controller.currentIndex == p2Controller.currentIndex)
+            {
+                FindObjectOfType<AudioManager>().play("Deconfirm");
+                p1Controller.clicked = false;
+                p2Controller.clicked = false;
+                return;
+            }
+            stageController.gameObject.SetActive(true);
         }
 	}
 }

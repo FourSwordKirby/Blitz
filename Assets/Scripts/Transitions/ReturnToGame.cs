@@ -6,7 +6,10 @@ public class ReturnToGame : MonoBehaviour {
     private bool p1ready = false;
     private bool p2ready = false;
     private bool changed = false;
-    
+
+    public ResultsConfirmationUI player1UI;
+    public ResultsConfirmationUI player2UI;
+
     // Update is called once per frame
     void Update()
     {
@@ -16,13 +19,39 @@ public class ReturnToGame : MonoBehaviour {
         }
         if (Input.GetButtonDown("P1 Attack"))
         {
-            Debug.Log("P1 READY");
-            p1ready = true;
+            if (!p1ready)
+            {
+                player1UI.confirm();
+                p1ready = true;
+            }
+            else
+            {
+                player1UI.deconfirm();
+                p1ready = false;
+            }
+        }
+        if (Input.GetButtonDown("P1 Special"))
+        {
+            player1UI.deconfirm();
+            p1ready = false;
         }
         if (Input.GetButtonDown("P2 Attack"))
         {
-            Debug.Log("P2 READY");
-            p2ready = true;
+            if (!p2ready)
+            {
+                player2UI.confirm();
+                p2ready = true;
+            }
+            else
+            {
+                player2UI.deconfirm();
+                p2ready = false;
+            }
+        }
+        if (Input.GetButtonDown("P1 Special"))
+        {
+            player1UI.deconfirm();
+            p1ready = false;
         }
     }
 }

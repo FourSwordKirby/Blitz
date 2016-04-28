@@ -4,9 +4,13 @@ using UnityEngine.SceneManagement;
 
 public class changeLevel : MonoBehaviour {
 
-	public IEnumerator change(string levelName, float time = 0.5f)
+	public IEnumerator change(string levelName, float time = 0.5f, bool fadeWhite = false)
     {
-        GameObject.FindObjectOfType<ScreenFader>().FadeToBlack();
+        if (!fadeWhite)
+            GameObject.FindObjectOfType<ScreenFader>().FadeToBlack();
+        else
+            GameObject.FindObjectOfType<ScreenFader>().FadeToWhite();
+
         while (!GameObject.FindObjectOfType<ScreenFader>().finishedFade)
         {
             yield return new WaitForSeconds(0.1f);

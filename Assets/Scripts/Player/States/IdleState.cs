@@ -16,6 +16,8 @@ public class IdleState : State<Player> {
         //Used to slow you down as you land
         player.selfBody.velocity = 0.5f * player.selfBody.velocity;
         player.anim.SetFloat("MoveSpeed", 0.0f);
+
+        player.anim.SetFloat("DirX", Parameters.VectorToDir(player.direction).x);
     }
 
     override public void Execute()

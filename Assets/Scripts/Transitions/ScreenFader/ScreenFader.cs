@@ -70,4 +70,10 @@ public class ScreenFader : MonoBehaviour
         fadeColor = Color.black;
         finishedFade = false;
     }
+
+    public void FadeToWhite()
+    {
+        fadeColor = Color.white;
+        finishedFade = false;
+    }
 }

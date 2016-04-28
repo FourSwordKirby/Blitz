@@ -46,6 +46,11 @@ public class GameManager : MonoBehaviour {
         {
             Debug.Log("Cannot find players on the current scene.");
         }
+       Players.Reverse();
+
+        //We need to sort players based on name....
+        //IE, make the player named p1 go into index [0]
+        //The players are grabbed kind of arbitrarily otherwise
 
         stage = GameObject.FindObjectOfType<Stage>();
         if (stage == null)
@@ -111,6 +116,7 @@ public class GameManager : MonoBehaviour {
             TimeController.SlowDownTime(0.1f);
             gameOver = true;
             StartCoroutine(this.GetComponent<changeLevel>().EndGame());
+            GameObject.Find("GameOver").GetComponent<AudioSource>().Play();
             StartCoroutine (this.GetComponent<changeLevel> ().change ("Result Scene"));
 		}
     }
@@ -150,6 +156,7 @@ public class GameManager : MonoBehaviour {
     public static Vector3 GetRespawnPosition()
     {
         //We will make this pick a location specified by the stage later
-        return stage.spawnPoints[Random.Range(0, stage.spawnPoints.Count)].transform.position;
+        List<GameObject> validSpawn = stage.spawnPoints.Where(x => Players.FindAll(y => y.transform.position == x.transform.position).Count == 0).ToList();
+        return validSpawn[Random.Range(0, validSpawn.Count)].transform.position;
     }
 }

@@ -12,6 +12,9 @@ public class FetchResults : MonoBehaviour {
     private ScreenFader fader;
     public Text results;
 
+    public ResultsConfirmationUI p1UI;
+    public ResultsConfirmationUI p2UI;
+
 	// Use this for initialization
 	void Start ()
     {
@@ -24,9 +27,15 @@ public class FetchResults : MonoBehaviour {
 			tempState = tempStateHolder.GetComponent<TempState> ();
 		}
 		if (tempState.state ["Winner"] == "Player") {
-			results.text = "PLAYER 1 VICTORY";
+			results.text = "PLAYER 1 VICTORY (>^__^)>";
+
+            p1UI.displayText.text = "1st place: Player 1 !";
+            p2UI.displayText.text = "2nd place: Player 2";
 		} else if (tempState.state ["Winner"] == "Player 2") {
 			results.text = "PLAYER 2 VICTORY";
+
+            p1UI.displayText.text = "2nd place: Player 1";
+            p2UI.displayText.text = "1st place: Player 2!";
         } else {
 			results.text = "DRAW";
 		}

@@ -17,19 +17,49 @@ public class SelectionController : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
+        Debug.Log("player1" + Input.GetAxis("P1 Vertical"));
+
+        Debug.Log("player2" + Input.GetAxis("P2 Vertical"));
+
         if (playerIndex == 0)
         {
             if (Input.GetButtonDown("P1 Attack"))
+            {
+                FindObjectOfType<AudioManager>().play("Select");
                 clicked = true;
+            }
             if (Input.GetButtonDown("P1 Special"))
+            {
+                FindObjectOfType<AudioManager>().play("Deconfirm");
                 clicked = false;
+            }
         }
         if (playerIndex == 1)
         {
             if (Input.GetButtonDown("P2 Attack"))
+            {
+                FindObjectOfType<AudioManager>().play("Select");
                 clicked = true;
+            }
             if (Input.GetButtonDown("P2 Special"))
+            {
+                FindObjectOfType<AudioManager>().play("Deconfirm");
                 clicked = false;
+            }
+        }
+
+        if (playerIndex == 3)
+        {
+            if (Input.GetButtonDown("P1 Attack")||Input.GetButtonDown("P2 Attack"))
+            {
+                FindObjectOfType<AudioManager>().play("Select");
+                clicked = true;
+            }
+            if (Input.GetButtonDown("P1 Attack")||Input.GetButtonDown("P2 Special"))
+            {
+                FindObjectOfType<AudioManager>().play("Deconfirm");
+                clicked = false;
+            }
         }
 
         if (clicked)
@@ -48,6 +78,7 @@ public class SelectionController : MonoBehaviour {
             {
                 if (Input.GetAxis("P1 Vertical") > 0.5)
                 {
+                    FindObjectOfType<AudioManager>().play("Toggle");
                     currentIndex++;
                     if (currentIndex >= toggles.Count)
                         currentIndex = 0;
@@ -55,6 +86,7 @@ public class SelectionController : MonoBehaviour {
                 }
                 if (Input.GetAxis("P1 Vertical") < -0.5)
                 {
+                    FindObjectOfType<AudioManager>().play("Toggle");
                     currentIndex--;
                     if (currentIndex < 0)
                         currentIndex = toggles.Count - 1;
@@ -65,6 +97,7 @@ public class SelectionController : MonoBehaviour {
             {
                 if (Input.GetAxis("P2 Vertical") > 0.5)
                 {
+                    FindObjectOfType<AudioManager>().play("Toggle");
                     currentIndex++;
                     if (currentIndex >= toggles.Count)
                         currentIndex = 0;
@@ -72,6 +105,26 @@ public class SelectionController : MonoBehaviour {
                 }
                 if (Input.GetAxis("P2 Vertical") < -0.5)
                 {
+                    FindObjectOfType<AudioManager>().play("Toggle");
+                    currentIndex--;
+                    if (currentIndex < 0)
+                        currentIndex = toggles.Count - 1;
+                    cooldownTimer = cooldownLength;
+                }
+            }
+            if (playerIndex == 3)
+            {
+                if (Input.GetAxis("P1 Vertical") > 0.5 || Input.GetAxis("P2 Vertical") > 0.5)
+                {
+                    FindObjectOfType<AudioManager>().play("Toggle");
+                    currentIndex++;
+                    if (currentIndex >= toggles.Count)
+                        currentIndex = 0;
+                    cooldownTimer = cooldownLength;
+                }
+                if (Input.GetAxis("P1 Vertical") < -0.5 ||Input.GetAxis("P2 Vertical") < -0.5)
+                {
+                    FindObjectOfType<AudioManager>().play("Toggle");
                     currentIndex--;
                     if (currentIndex < 0)
                         currentIndex = toggles.Count - 1;

@@ -194,7 +194,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Fireball
   owner: {fileID: 0}
-  damage: 5
+  damage: 10
   knockbackVector: {x: 7.5, y: 2}
   hitlag: 0.1
   hitstun: 0.3
