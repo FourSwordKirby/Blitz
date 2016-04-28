@@ -233,5 +233,10 @@ public class Player : Mobile {
             isStunned = false;
             this.health = maxHealth;
         }
+        else
+        {
+            this.transform.position = GameManager.GetRespawnPosition();
+            this.GetComponent<SpriteRenderer>().enabled = false;
+        }
     }
 }

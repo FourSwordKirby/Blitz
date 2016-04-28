@@ -115,8 +115,9 @@ public class GameManager : MonoBehaviour {
             tempState.state["Winner"] = winner.gameObject.name;
             TimeController.SlowDownTime(0.1f);
             gameOver = true;
-            StartCoroutine(this.GetComponent<changeLevel>().EndGame());
             GameObject.Find("GameOver").GetComponent<AudioSource>().Play();
+            GameObject.FindObjectOfType<ScreenFader>().fadeTime = 4.0f;
+            StartCoroutine(this.GetComponent<changeLevel>().EndGame());
             StartCoroutine (this.GetComponent<changeLevel> ().change ("Result Scene"));
 		}
     }
