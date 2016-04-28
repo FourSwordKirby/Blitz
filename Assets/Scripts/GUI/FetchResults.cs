@@ -27,12 +27,12 @@ public class FetchResults : MonoBehaviour {
 			tempState = tempStateHolder.GetComponent<TempState> ();
 		}
 		if (tempState.state ["Winner"] == "Player") {
-			results.text = "PLAYER 1 VICTORY (>^__^)>";
+            results.text = "PLAYER <b>1</b> VICTORY! (>^__^)>";
 
             p1UI.displayText.text = "1st place: Player 1 !";
             p2UI.displayText.text = "2nd place: Player 2";
 		} else if (tempState.state ["Winner"] == "Player 2") {
-			results.text = "PLAYER 2 VICTORY";
+            results.text = "PLAYER <b>2</b> VICTORY! (>^__^)>";
 
             p1UI.displayText.text = "2nd place: Player 1";
             p2UI.displayText.text = "1st place: Player 2!";
