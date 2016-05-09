@@ -15,13 +15,21 @@ public class CharSelectController : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
+    private float demoScreenTime = 58.0f;
     private float timer = 0.0f;
 	void Update () {
         if (!p1Controller.clicked && !p2Controller.clicked)
         {
-            if (Input.GetButtonDown("P1 Special") || Input.GetButtonDown("P2 Special"))
-                StartCoroutine(GameManager.FindObjectOfType<changeLevel>().change("Title", 0.05f, true));
+            timer += Time.deltaTime;
+            if (timer >= demoScreenTime
+                || (Input.GetButtonDown("P1 Special") || Input.GetButtonDown("P2 Special")))
+            {
+                StartCoroutine(GameManager.FindObjectOfType<changeLevel>().change("Title", 1.8f, true));
+                timer = -demoScreenTime;
+            }
+            return;
         }
+        timer = 0.0f;
 
         if (done)
             return;
@@ -44,9 +52,9 @@ public class CharSelectController : MonoBehaviour {
                 done = true;
                 GameObject.FindObjectOfType<bgmcontroller>().fadeOut = true;
                 if (stageController.currentIndex == 0)
-                    StartCoroutine(GameManager.FindObjectOfType<changeLevel>().change("Fight Scene", 0.05f, true));
+                    StartCoroutine(GameManager.FindObjectOfType<changeLevel>().change("Fight Scene", 2.0f, true));
                 if (stageController.currentIndex == 1)
-                    StartCoroutine(GameManager.FindObjectOfType<changeLevel>().change("Fight Scene 2",0.05f,true));
+                    StartCoroutine(GameManager.FindObjectOfType<changeLevel>().change("Fight Scene 2",2.0f,true));
             }
         }
 
