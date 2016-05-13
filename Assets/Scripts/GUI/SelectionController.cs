@@ -73,7 +73,7 @@ public class SelectionController : MonoBehaviour {
         {
             if (playerIndex == 0)
             {
-                if (Input.GetAxis("P1 Vertical") < -0.5)
+                if (Input.GetAxis("P1 Vertical") < -0.5 || Input.GetAxis("P1 Keyboard Vertical") < 0)
                 {
                     FindObjectOfType<AudioManager>().play("Toggle");
                     currentIndex++;
@@ -81,7 +81,7 @@ public class SelectionController : MonoBehaviour {
                         currentIndex = 0;
                     cooldownTimer = cooldownLength;
                 }
-                if (Input.GetAxis("P1 Vertical") > 0.5)
+                if (Input.GetAxis("P1 Vertical") > 0.5 || Input.GetAxis("P1 Keyboard Vertical") > 0)
                 {
                     FindObjectOfType<AudioManager>().play("Toggle");
                     currentIndex--;
@@ -92,7 +92,7 @@ public class SelectionController : MonoBehaviour {
             }
             if (playerIndex == 1)
             {
-                if (Input.GetAxis("P2 Vertical") < -0.5)
+                if (Input.GetAxis("P2 Vertical") < -0.5 || Input.GetAxis("P2 Keyboard Vertical") < 0)
                 {
                     FindObjectOfType<AudioManager>().play("Toggle");
                     currentIndex++;
@@ -100,7 +100,7 @@ public class SelectionController : MonoBehaviour {
                         currentIndex = 0;
                     cooldownTimer = cooldownLength;
                 }
-                if (Input.GetAxis("P2 Vertical") > 0.5)
+                if (Input.GetAxis("P2 Vertical") > 0.5 || Input.GetAxis("P2 Keyboard Vertical") > 0)
                 {
                     FindObjectOfType<AudioManager>().play("Toggle");
                     currentIndex--;
@@ -111,7 +111,8 @@ public class SelectionController : MonoBehaviour {
             }
             if (playerIndex == 3)
             {
-                if (Input.GetAxis("P1 Vertical") > 0.5 || Input.GetAxis("P2 Vertical") > 0.5)
+                if (Input.GetAxis("P1 Vertical") > 0.5 || Input.GetAxis("P2 Vertical") > 0.5
+                     || Input.GetAxis("P1 Keyboard Vertical") > 0 || Input.GetAxis("P2 Keyboard Vertical") > 0)
                 {
                     FindObjectOfType<AudioManager>().play("Toggle");
                     currentIndex++;
@@ -119,7 +120,8 @@ public class SelectionController : MonoBehaviour {
                         currentIndex = 0;
                     cooldownTimer = cooldownLength;
                 }
-                if (Input.GetAxis("P1 Vertical") < -0.5 ||Input.GetAxis("P2 Vertical") < -0.5)
+                if (Input.GetAxis("P1 Vertical") < -0.5 ||Input.GetAxis("P2 Vertical") < -0.5
+                    || Input.GetAxis("P1 Keyboard Vertical") < 0 || Input.GetAxis("P2 Keyboard Vertical") < 0)
                 {
                     FindObjectOfType<AudioManager>().play("Toggle");
                     currentIndex--;

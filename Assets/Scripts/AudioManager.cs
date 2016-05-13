@@ -9,7 +9,6 @@ public class AudioManager : MonoBehaviour {
 
 	void Awake() {
 		audio = GetComponent<AudioSource>();
-        Debug.Log(audio);
 	}
 
     public void play(string name)

@@ -4,8 +4,9 @@ using System.Collections;
 public class CharSelectController : MonoBehaviour {
     public SelectionController p1Controller;
     public SelectionController p2Controller;
-
     public SelectionController stageController;
+
+    public ControlsDisplay controlsDisplay;
 
     private bool done;
 
@@ -18,6 +19,26 @@ public class CharSelectController : MonoBehaviour {
     private float demoScreenTime = 58.0f;
     private float timer = 0.0f;
 	void Update () {
+        if (Input.GetButton("Start"))
+        {
+            controlsDisplay.display();
+        }
+
+        if (controlsDisplay.visible)
+        {
+            if (Input.GetAxis("P1 Horizontal") > 0.5 || Input.GetAxis("P1 Keyboard Horizontal") > 0
+                || Input.GetAxis("P2 Horizontal") > 0.5 || Input.GetAxis("P2 Keyboard Horizontal") > 0)
+            {
+                controlsDisplay.nextPage();
+            }
+            if (Input.GetAxis("P1 Horizontal") < -0.5 || Input.GetAxis("P1 Keyboard Horizontal") < 0
+                || Input.GetAxis("P2 Horizontal") < -0.5 || Input.GetAxis("P2 Keyboard Horizontal") < 0)
+            {
+                controlsDisplay.previousPage();
+            }
+            return;
+        }
+
         if (!p1Controller.clicked && !p2Controller.clicked)
         {
             timer += Time.deltaTime;

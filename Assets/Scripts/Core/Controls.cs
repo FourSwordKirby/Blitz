@@ -8,8 +8,8 @@ public class Controls {
      * between crouching on a platform and falling through the platform
      */
     public const float FALL_THROUGH_THRESHOLD = 0.5f;
-    public const float deadzone = 0.5f;
     public const float axisThreshold = 0.5f;
+    public const float keyboardScaling = 2.0f;
 
     public static Vector2 getDirection(Player player)
     {
@@ -19,25 +19,46 @@ public class Controls {
         if (GameManager.Players.IndexOf(player) == 0)
         {
             if (Mathf.Abs(Input.GetAxis("P1 Horizontal")) > Mathf.Abs(Input.GetAxis("P1 Keyboard Horizontal")))
+            {
                 xAxis = Input.GetAxis("P1 Horizontal");
+
+                if (Mathf.Abs(xAxis) < axisThreshold)
+                    xAxis = 0;
+            }
             else
-                xAxis = Input.GetAxis("P1 Keyboard Horizontal");
+                xAxis = Mathf.Clamp(keyboardScaling * Input.GetAxis("P1 Keyboard Horizontal"), -1, 1);
             if (Mathf.Abs(Input.GetAxis("P1 Vertical")) > Mathf.Abs(Input.GetAxis("P1 Keyboard Vertical")))
+            {
                 yAxis = Input.GetAxis("P1 Vertical");
+
+                if (Mathf.Abs(yAxis) < axisThreshold)
+                    yAxis = 0;
+            }
             else
-                yAxis = Input.GetAxis("P1 Keyboard Vertical");
+                yAxis = Mathf.Clamp(keyboardScaling * Input.GetAxis("P1 Keyboard Vertical"), -1, 1);
         }
         else if (GameManager.Players.IndexOf(player) == 1)
         {
             if (Mathf.Abs(Input.GetAxis("P2 Horizontal")) > Mathf.Abs(Input.GetAxis("P2 Keyboard Horizontal")))
+            {
                 xAxis = Input.GetAxis("P2 Horizontal");
+
+                if (Mathf.Abs(xAxis) < axisThreshold)
+                    xAxis = 0;
+            }
             else
-                xAxis = Input.GetAxis("P2 Keyboard Horizontal");
+                xAxis = Mathf.Clamp(keyboardScaling * Input.GetAxis("P2 Keyboard Horizontal"), -1, 1);
             if (Mathf.Abs(Input.GetAxis("P2 Vertical")) > Mathf.Abs(Input.GetAxis("P2 Keyboard Vertical")))
+            {
                 yAxis = Input.GetAxis("P2 Vertical");
+
+                if (Mathf.Abs(yAxis) < axisThreshold)
+                    yAxis = 0;
+            }
             else
-                yAxis = Input.GetAxis("P2 Keyboard Vertical");
+                yAxis = Mathf.Clamp(keyboardScaling * Input.GetAxis("P2 Keyboard Vertical"), -1, 1);
         }
+        /* Disabled because no 4 player support in the foreseeable future (hard for people to get a gc adapter, arcade cabinet doesn't support, etc)
         else if (GameManager.Players.IndexOf(player) == 2)
         {
             if (Mathf.Abs(Input.GetAxis("P3 Horizontal")) > Mathf.Abs(Input.GetAxis("P3 Keyboard Horizontal")))
@@ -60,16 +81,8 @@ public class Controls {
             else
                 yAxis = Input.GetAxis("P4 Keyboard Vertical");
         }
-
-        if (Mathf.Abs(xAxis) < axisThreshold)
-            xAxis = 0;
-        if (Mathf.Abs(yAxis) < axisThreshold)
-            yAxis = 0;
-
+         * */
         Vector2 inputVector = new Vector2(xAxis, yAxis);
-        if (inputVector.magnitude < deadzone)
-            inputVector  = Vector2.zero;
-
         return inputVector;
     }
 
