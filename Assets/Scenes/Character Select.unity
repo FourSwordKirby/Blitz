@@ -910,8 +910,8 @@ RectTransform:
   m_RootOrder: 17
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 22, y: -359.53}
-  m_SizeDelta: {x: 628, y: 48}
+  m_AnchoredPosition: {x: 21, y: -336}
+  m_SizeDelta: {x: 626, y: 95}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &513074441
 MonoBehaviour:
@@ -945,7 +945,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Press Enter/Start For Controls
+  m_Text: 'Press Enter/Start For Controls
+
+    G and , keys confirm selection'
 --- !u!222 &513074442
 CanvasRenderer:
   m_ObjectHideFlags: 0
