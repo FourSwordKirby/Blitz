@@ -100,8 +100,6 @@ public class GameManager : MonoBehaviour {
             Debug.Log("P1 JUMP");
         if (Controls.shieldInputDown(Players[0]))
             Debug.Log("P1 SHIELD");
-        if (Controls.enhanceInputDown(Players[0]))
-            Debug.Log("P1 ENHANCE");
         if (Controls.superInputDown(Players[0]))
             Debug.Log("P1 SUPER");
         if (Controls.pauseInputDown(Players[0]))

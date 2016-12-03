@@ -147,20 +147,6 @@ public class Controls {
             return false;
     }
 
-    public static bool enhanceInputDown(Player player)
-    {
-        if (GameManager.Players.IndexOf(player) == 0)
-            return Input.GetButtonDown("P1 Enhance");
-        else if (GameManager.Players.IndexOf(player) == 1)
-            return Input.GetButtonDown("P2 Enhance");
-        else if (GameManager.Players.IndexOf(player) == 2)
-            return Input.GetButtonDown("P3 Enhance");
-        else if (GameManager.Players.IndexOf(player) == 3)
-            return Input.GetButtonDown("P4 Enhance");
-        else
-            return false;
-    }
-
     public static bool superInputDown(Player player)
     {
         if (GameManager.Players.IndexOf(player) == 0)
@@ -233,20 +219,6 @@ public class Controls {
             return Input.GetButton("P3 Shield");
         else if (GameManager.Players.IndexOf(player) == 3)
             return Input.GetButton("P4 Shield");
-        else
-            return false;
-    }
-
-    public static bool enhanceInputHeld(Player player)
-    {
-        if (GameManager.Players.IndexOf(player) == 0)
-            return Input.GetButton("P1 Enhance");
-        else if (GameManager.Players.IndexOf(player) == 1)
-            return Input.GetButton("P2 Enhance");
-        else if (GameManager.Players.IndexOf(player) == 2)
-            return Input.GetButton("P3 Enhance");
-        else if (GameManager.Players.IndexOf(player) == 3)
-            return Input.GetButton("P4 Enhance");
         else
             return false;
     }
